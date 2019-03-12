@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Include All Styles-->
+        {% include "app_abtest/partials/_header.html" %}
+        <!--EOC-->
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <header>
+        <!--Include Navbar-->
+        navbar here
+        <!--EOC-->
+    </header>
+
+    <body id="mu-body-wrapper">
+        <div id="content" class="site-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+
+    <footer class="footer">
+        <!--Include Footer-->
+        {% include "app_abtest/partials/_footer.html" %}
+        <!--EOC-->
+    </footer>
+
+</html>
