@@ -64,6 +64,7 @@ def ABTestDetailTesterView(request, pk):
         form = ABTestCommentModelForm(request.POST)
         if form.is_valid():
             result = form.save(commit = False)
+            result.design_abtest_title = Design.objects.get(design_title=abtest.design_title)
             result.design_abtest_tester_user = Tester.objects.get(user=request.user)
             result.is_created = datetime.now()
             result.abtest = abtest
