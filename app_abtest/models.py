@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from app_user.models import Tester
 from taggit.managers import TaggableManager
 
@@ -53,6 +54,7 @@ class Design(models.Model):
     class Meta:
         verbose_name_plural = "Design Testing Materials"
 
+
     def __str__(self):
         return str(self.design_title)
 
@@ -71,7 +73,7 @@ class DesignComment(models.Model):
     design_abtest_tester_user = models.ForeignKey(
         Tester,
         verbose_name = "Tester user",
-        related_name = 'user_tester',
+        related_name = 'tester_user_hook',
         null = True,
         blank = True,
         on_delete = models.CASCADE
@@ -80,8 +82,9 @@ class DesignComment(models.Model):
     design_abtest_title = models.ForeignKey(
         Design, 
         verbose_name = "Testing Title",
-        null = False,
-        blank = False,
+        related_name = "testing_title",
+        null = True,
+        blank = True,
         on_delete = models.CASCADE
     )
 
@@ -123,16 +126,10 @@ class DesignComment(models.Model):
         blank = True
     )
 
-    # design_password = models.CharField(
-    #     verbose_name = "Design Page Password",
-    #     max_length = 128,
-    #     null = False,
-    #     blank = False
-    # )
-
 
     class Meta:
         verbose_name_plural = "Test Results"
+
 
     def __str__(self):
         return str(self.design_abtest_tester_name)

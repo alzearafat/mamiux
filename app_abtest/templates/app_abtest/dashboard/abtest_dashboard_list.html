@@ -1,0 +1,23 @@
+{% extends "app_abtest/main/abtest_base.html" %}
+{% block title %}MamiUX{% endblock %}
+{% load staticfiles %}
+{% load humanize %}
+{% block content %}
+
+    <!-- HERO -->
+    <div class="mu-hero-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    list test dasboard
+                    <ul>
+                    {% for abtest in abtest_list_dashboard %}
+                        <li>{{ abtest.design_title }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

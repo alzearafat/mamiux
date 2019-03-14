@@ -2,7 +2,7 @@ from django import forms
 from .models import DesignComment
 
 
-class ABTestCommentForm(forms.ModelForm):
+class ABTestCommentModelForm(forms.ModelForm):
 
     """
     Comment Form
@@ -13,9 +13,9 @@ class ABTestCommentForm(forms.ModelForm):
         fields = (
             'design_abtest_tester_name',
             'design_abtest_choice',
-            'design_abtest_comment',
+            'design_abtest_comment'
         )
-        exclude = ['design_abtest_title', 'design_abtest_tester_user', 'is_published']
+        exclude = [ 'design_abtest_title', 'design_abtest_tester_user', 'is_published']
         widgets = {
             'design_abtest_title': forms.HiddenInput(),
             'design_abtest_tester_user': forms.HiddenInput(),

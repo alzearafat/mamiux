@@ -1,26 +1,17 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "app_abtest/main/abtest_base.html" %}
+{% block title %} {{ abtest.design_title }} - Forum - Django Indonesia{% endblock %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% load staticfiles %}
+{% block content %}
+{{ form.media }}
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
-    </head>
-    <body>
-        {% block content %}
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        {{ design.design_title }}
-        {{ design.design_comment }}
-        {% endblock %}
-    </body>
-</html>
+<p>{{ abtest.design_title }}</p>
+<p><img src="{{ abtest.design_image_a.url }}" /></p>
+<form action="" enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -10,8 +10,9 @@ class Tester(models.Model):
 
     user = models.OneToOneField(
         User,
-        verbose_name = "Tester",
-        on_delete = models.CASCADE
+        default = "Tester",
+        verbose_name = "Tester Username",
+        on_delete=models.CASCADE
     )
 
     tester_name = models.CharField(

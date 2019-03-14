@@ -1,0 +1,24 @@
+// BASE TO INCLUDE ALL SCSS FILES
+
+// PARTIALS
+@import "partials/global";
+@import "partials/colors";
+@import "partials/fonts";
+@import "partials/header";
+@import "partials/navbar";
+@import "partials/footer";
+@import "partials/pagination";
+
+// APP AB TEST
+// DASHBOARD
+@import "main/app_abtest/dashboard/abtest_dashboard_auth";
+@import "main/app_abtest/dashboard/abtest_dashboard_list";
+@import "main/app_abtest/dashboard/abtest_dashboard_detail";
+@import "main/app_abtest/dashboard/abtest_dashboard_new";
+@import "main/app_abtest/dashboard/abtest_dashboard_edit";
+
+// TESTER
+@import "main/app_abtest/tester/abtest_tester_auth";
+@import "main/app_abtest/tester/abtest_tester_detail";
+@import "main/app_abtest/tester/abtest_tester_thanks";
+
