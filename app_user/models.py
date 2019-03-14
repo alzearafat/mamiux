@@ -1,6 +1,7 @@
 from django.db import models
+from django.dispatch import receiver
 from django.contrib.auth.models import User
-
+from django.db.models.signals import post_save
 
 class Tester(models.Model):
 
@@ -24,3 +25,12 @@ class Tester(models.Model):
 
     def __str__(self):
         return str(self.user)
+
+@receiver(post_save, sender=User)
+def create_user_tester(sender, instance, created, **kwargs):
+    """
+    Automatically Create User when Login
+    """
+    if created:
+        Tester.objects.create(user=instance)
+

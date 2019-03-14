@@ -155,7 +155,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'email',
         ],
         'AUTH_PARAMS': {
-            'access_type': 'online',
+            'access_type': 'offline',
         }
     }
 }
@@ -172,6 +172,7 @@ LOGIN_REDIRECT_URL = '/'
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_STORE_TOKENS = True
+ACCOUNT_USERNAME_REQUIRED = False
 
 
 # SUMMERNOTE

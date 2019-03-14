@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from django.db.models import Count
 
 # DASHBOARD VIEWS -----------------
 
@@ -37,6 +38,24 @@ def ABTestListDashboardView(request):
         context = {'abtest_list_dashboard': abtest_list_dashboard}
         return render(request, template, context)
 
+
+def ABTestDetailDashboardView(request, pk):
+
+    abtest = Design.objects.get(pk=pk)
+    abtest_results = DesignComment.objects.filter(design_abtest_title=abtest.id)
+    template = "app_abtest/dashboard/abtest_dashboard_results.html"
+    total_ab = DesignComment.objects.filter(design_abtest_title=abtest.id).annotate(num_ab=Count('design_abtest_choice'))
+    total_a = DesignComment.objects.filter(design_abtest_title=abtest.id, design_abtest_choice="a").annotate(num_a=Count('design_abtest_choice'))
+    total_b = DesignComment.objects.filter(design_abtest_title=abtest.id, design_abtest_choice="b").annotate(num_b=Count('design_abtest_choice'))
+    context = {
+        'abtest': abtest, 
+        'abtest_results': abtest_results,
+        'total_ab': total_ab,
+        'total_a': total_a,
+        'total_b': total_b
+    }
+    return render(request, template, context)
+
 # ---------------------------
 
 
@@ -61,6 +80,7 @@ def ABTestDetailTesterView(request, pk):
     template = "app_abtest/tester/abtest_tester_detail.html"
     context = {'abtest': abtest, 'form': form}
     if request.method == "POST":
+        yesterday = timezone.now() - timezone.timedelta(days=1)
         form = ABTestCommentModelForm(request.POST)
         if form.is_valid():
             result = form.save(commit = False)
@@ -69,9 +89,13 @@ def ABTestDetailTesterView(request, pk):
             result.is_created = datetime.now()
             result.abtest = abtest
             result.save()
-            return redirect("/") #Nanti harus thank you page
+            return redirect('/') #Nanti harus thank you page
     else:
         return render(request, template, context)
 
+
+def ABTestThanksView(request):
+    template = "app_abtest/tester/abtest_tester_thanks.html"
+    return render(template)
 
 # ---------------------------

@@ -126,10 +126,14 @@ class DesignComment(models.Model):
         blank = True
     )
 
+    # Limit user only can post once
+    # def save(self, *args, **kwargs):
+    #     if self.__class__.objects.filter(design_abtest_tester_user=self.design_abtest_tester_user).count()>=1:
+    #         return None
+    #     return super().save(*args, **kwargs) 
 
     class Meta:
         verbose_name_plural = "Test Results"
-
 
     def __str__(self):
         return str(self.design_abtest_tester_name)

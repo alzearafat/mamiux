@@ -1,0 +1,21 @@
+{% extends "app_abtest/main/abtest_base.html" %}
+{% block title %}MamiUX List Results{% endblock %}
+{% load staticfiles %}
+{% load humanize %}
+{% block content %}
+
+
+
+A: {{ total_a.count }}
+B: {{ total_b.count }}
+A/B: {{ total_ab.count }}
+
+<ul>
+{% for abtest_result in abtest_results %}
+    <li>{{ abtest_result.design_abtest_tester_user }}</li>
+    <li>{{ abtest_result.design_abtest_choice }}</li>
+    <li>{{ abtest_result.design_abtest_comment }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
