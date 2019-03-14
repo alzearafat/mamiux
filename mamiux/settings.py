@@ -51,8 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'taggit',
     'crispy_forms',
-    'django_summernote'
-
+    'django_summernote',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.utils import timezone
 from app_user.models import Tester
+from django.db.models import Count
 from .forms import ABTestCommentModelForm
 from .models import Design, DesignComment
 from django.core.exceptions import PermissionDenied
@@ -8,7 +9,6 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from django.db.models import Count
 
 # DASHBOARD VIEWS -----------------
 
@@ -55,6 +55,7 @@ def ABTestDetailDashboardView(request, pk):
         'total_b': total_b
     }
     return render(request, template, context)
+
 
 # ---------------------------
 
