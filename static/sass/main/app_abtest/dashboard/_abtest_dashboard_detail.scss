@@ -1,0 +1,63 @@
+.mu-ab-result-wrapper {
+    
+    .mu-ab-result-title-wrapper {
+        padding-top: 100px;
+        padding-bottom: 30px;
+
+        .mu-ab-result-title {
+            
+            .mu-typing-effect {
+                overflow: hidden;
+                border-right: .15em solid $mu-color-black;
+                white-space: nowrap;
+                margin: 0 auto;
+                animation: 
+                    typing 3.5s steps(40, end),
+                    blink-caret .75s step-end infinite;
+            }
+
+            // * The typing effect */
+            @keyframes typing {
+              from { width: 0 }
+              to { width: 100% }
+            }
+
+            /* The typewriter cursor effect */
+            @keyframes blink-caret {
+              from, to { border-color: transparent }
+              50% { border-color: $mu-color-black; }
+            }
+
+        }
+    }
+
+    .mu-ab-result-container {
+
+        padding-top: 100px;
+        padding-bottom: 50px;
+
+        .mu-mami-pixelated {
+            width: 30%;
+            height: auto;
+        }
+
+    }
+
+    .mu-ab-tester-result-container {
+
+        .mu-ab-tester-result-single {
+            padding: 30px 0 30px 0;
+
+            p {
+                line-height: 28px;
+            }
+
+
+            .mu-uppercase {
+              text-transform: uppercase;
+            }
+        }
+
+    }
+
+}

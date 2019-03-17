@@ -1,0 +1,80 @@
+{% extends "app_abtest/main/abtest_base.html" %}
+{% block title %}{{ abtest.design_title }} - MamiUX List Results{% endblock %}
+{% load staticfiles %}
+{% load humanize %}
+{% block content %}
+
+<!-- A/B TEST DASHBOARD LIST -->
+<div class="mu-ab-result-wrapper">
+    
+    <div class="mu-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mu-ab-result-title-wrapper">
+                    <div class="nes-container is-rounded">
+                        <div class="mu-ab-result-title is-centered">
+                            <p>Testing results for:</p>
+                            <h2 class="mu-typing-effect">{{ abtest.design_title }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHART -->
+    <div class="mu-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mu-ab-result-container">
+                    <section class="message-list">
+                        <section class="message -right">
+                            <!-- Balloon -->
+                            <div class="nes-balloon from-right">
+                                <p>Total votes kali ini adalah: <b>{{ total_ab.count }}</b></p>
+                            </div>
+                            <img src="{% static "img/mami-pixelated.png" %}" class="mu-mami-pixelated" />
+                        </section>
+                    </section>
+                    <div class="nes-container with-title">
+                        <p class="title mu-padding-bottom-20px">A/B Vote Chart</p>
+                        <p>A : {{ total_a.count }}</p>
+                        <p><progress class="nes-progress is-primary" value="{{ total_a.count }}" max="50"></progress></p>
+                        <div class="mu-padding-bottom-10px"></div>
+                        <p>B : {{ total_b.count }}</p>
+                        <p><progress class="nes-progress is-error" value="{{ total_ab.count }}" max="50"></progress></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EOL -->
+
+
+    <!-- TOTAL VOTES -->
+    <div class="mu-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mu-ab-tester-result-container">
+                    <div class="nes-container with-title">
+                        <p class="title mu-padding-bottom-30px">Tester Comments</p>
+                        {% for abtest_result in abtest_results %}
+                            <div class="mu-ab-tester-result-single">
+                                <p>Name: {{ abtest_result.design_abtest_tester_name }}</p>
+                                <p>Phone: {{ abtest_result.design_abtest_tester_phone }}</p>
+                                <p class="mu-uppercase">A/B?: {{ abtest_result.design_abtest_choice }}</p>
+                                <p>Comment:</p>
+                                <p style="padding-bottom: 10px;">{{ abtest_result.design_abtest_comment }}</p>
+                                ----------------------------------------------
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EOL -->
+
+</div>
+
+{% endblock %}

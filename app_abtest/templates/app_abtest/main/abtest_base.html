@@ -11,14 +11,20 @@
 
     <header>
         <!--Include Navbar-->
-        navbar here
+        {% include "app_abtest/partials/_navbar.html" %}
         <!--EOC-->
     </header>
 
-    <body id="mu-body-wrapper">
-        <div id="content" class="site-content">
-            {% block content %}
-            {% endblock %}
+    <body class="mu-body-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="mu-content-box">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 

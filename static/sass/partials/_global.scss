@@ -1,0 +1,90 @@
+// GLOBAL
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  &:visited {
+    color: $mu-color-visitedlink;
+  }
+}
+
+hr {
+    border-top:1px dotted #000;}
+
+.mu-container {
+    width: 55rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mu-width-full {
+    width: 100%;
+}
+
+.mu-list {
+    margin-bottom: 20px;
+}
+
+.mu-float-left {
+    float: left;
+}
+
+.mu-float-right {
+    float: right;
+}
+
+// PADDING 10px
+.mu-padding-top-10px {
+    padding-top: 10px !important;
+}
+
+.mu-padding-right-10px {
+    padding-right: 10px !important;
+}
+
+.mu-padding-bottom-10px {
+    padding-bottom: 10px !important;
+}
+
+.mu-padding-left-10px {
+    padding-left: 10px !important;
+}
+
+
+// PADDING 20px
+.mu-padding-top-20px {
+    padding-top: 20px !important;
+}
+
+.mu-padding-right-20px {
+    padding-right: 20px !important;
+}
+
+.mu-padding-bottom-20px {
+    padding-bottom: 20px !important;
+}
+
+.mu-padding-left-20px {
+    padding-left: 20px !important;
+}
+
+
+// PADDING 30px
+.mu-padding-top-30px {
+    padding-top: 30px !important;
+}
+
+.mu-padding-right-30px {
+    padding-right: 30px !important;
+}
+
+.mu-padding-bottom-30px {
+    padding-bottom: 30px !important;
+}
+
+.mu-padding-left-30px {
+    padding-left: 30px !important;
+}

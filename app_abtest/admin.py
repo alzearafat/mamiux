@@ -1,6 +1,7 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
 from app_abtest.models import Design, DesignComment
+from django_summernote.admin import SummernoteModelAdmin
+
 
 
 class ABTestAdmin(admin.ModelAdmin):
@@ -22,6 +23,7 @@ class ABTestAdmin(admin.ModelAdmin):
         'is_modified'
     )
 
+
 class ABTestCommentAdmin(SummernoteModelAdmin):
 
     """
@@ -33,6 +35,7 @@ class ABTestCommentAdmin(SummernoteModelAdmin):
         'design_abtest_title',
         'design_abtest_tester_user',
         'design_abtest_tester_name',
+        'design_abtest_tester_phone',
         'design_abtest_choice',
         'is_created',
         'is_modified',

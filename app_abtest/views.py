@@ -10,6 +10,22 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
+# STATIC PAGE VIEWS -----------------
+
+def ABTestStaticHomepageView(request):
+
+    """
+    Render Homepage Static
+    :param request:
+    :return:
+    """
+
+    template = "app_abtest/static/abtest_static_homepage.html"
+    return render(request, template)
+
+# ---------------------------
+
+
 # DASHBOARD VIEWS -----------------
 
 @login_required
@@ -41,9 +57,16 @@ def ABTestListDashboardView(request):
 
 def ABTestDetailDashboardView(request, pk):
 
+    """
+    Render Single A/B Test with Stats
+    :param request:
+    :param pk:
+    :return:
+    """
+
     abtest = Design.objects.get(pk=pk)
     abtest_results = DesignComment.objects.filter(design_abtest_title=abtest.id)
-    template = "app_abtest/dashboard/abtest_dashboard_results.html"
+    template = "app_abtest/dashboard/abtest_dashboard_detail.html"
     total_ab = DesignComment.objects.filter(design_abtest_title=abtest.id).annotate(num_ab=Count('design_abtest_choice'))
     total_a = DesignComment.objects.filter(design_abtest_title=abtest.id, design_abtest_choice="a").annotate(num_a=Count('design_abtest_choice'))
     total_b = DesignComment.objects.filter(design_abtest_title=abtest.id, design_abtest_choice="b").annotate(num_b=Count('design_abtest_choice'))
@@ -84,6 +107,7 @@ def ABTestDetailTesterView(request, pk):
         yesterday = timezone.now() - timezone.timedelta(days=1)
         form = ABTestCommentModelForm(request.POST)
         if form.is_valid():
+            human = True
             result = form.save(commit = False)
             result.design_abtest_title = Design.objects.get(design_title=abtest.design_title)
             result.design_abtest_tester_user = Tester.objects.get(user=request.user)

@@ -14,11 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from app_abtest import views
+from django.conf.urls.static import static
+
 
 urlpatterns = [
+
+    # STATIC PAGE
+    path('', views.ABTestStaticHomepageView, name='abtest_static_homepage'),
+
     #MAIN
     path('admin/', admin.site.urls),
     path('abtest/', include('app_abtest.urls', namespace='abtest')),
@@ -26,6 +32,8 @@ urlpatterns = [
     #APP
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
+    path('captcha/', include('captcha.urls')),
+
 ]
 
 if settings.DEBUG:

@@ -1,3 +1,190 @@
+.mu-navbar-wrapper {
+  padding: 50px 0 0 0;
+}
 
+.mu-navbar-wrapper .mu-navbar li {
+  display: inline;
+  padding: 0 30px 0 0;
+  margin-left: 0px;
+}
 
-/*# sourceMappingURL=base.css.map */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:visited {
+  color: #000080;
+}
+
+hr {
+  border-top: 1px dotted #000;
+}
+
+.mu-container {
+  width: 55rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mu-width-full {
+  width: 100%;
+}
+
+.mu-list {
+  margin-bottom: 20px;
+}
+
+.mu-float-left {
+  float: left;
+}
+
+.mu-float-right {
+  float: right;
+}
+
+.mu-padding-top-10px {
+  padding-top: 10px !important;
+}
+
+.mu-padding-right-10px {
+  padding-right: 10px !important;
+}
+
+.mu-padding-bottom-10px {
+  padding-bottom: 10px !important;
+}
+
+.mu-padding-left-10px {
+  padding-left: 10px !important;
+}
+
+.mu-padding-top-20px {
+  padding-top: 20px !important;
+}
+
+.mu-padding-right-20px {
+  padding-right: 20px !important;
+}
+
+.mu-padding-bottom-20px {
+  padding-bottom: 20px !important;
+}
+
+.mu-padding-left-20px {
+  padding-left: 20px !important;
+}
+
+.mu-padding-top-30px {
+  padding-top: 30px !important;
+}
+
+.mu-padding-right-30px {
+  padding-right: 30px !important;
+}
+
+.mu-padding-bottom-30px {
+  padding-bottom: 30px !important;
+}
+
+.mu-padding-left-30px {
+  padding-left: 30px !important;
+}
+
+.mu-ab-dashboard-wrapper .mu-ab-dashboard-container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.mu-ab-dashboard-wrapper .mu-ab-dashboard-container .mu-mami-pixelated {
+  width: 30%;
+  height: auto;
+}
+
+.mu-ab-result-wrapper .mu-ab-result-title-wrapper {
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.mu-ab-result-wrapper .mu-ab-result-title-wrapper .mu-ab-result-title {
+  /* The typewriter cursor effect */
+}
+
+.mu-ab-result-wrapper .mu-ab-result-title-wrapper .mu-ab-result-title .mu-typing-effect {
+  overflow: hidden;
+  border-right: 0.15em solid #111111;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #111111;
+  }
+}
+
+.mu-ab-result-wrapper .mu-ab-result-container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.mu-ab-result-wrapper .mu-ab-result-container .mu-mami-pixelated {
+  width: 30%;
+  height: auto;
+}
+
+.mu-ab-result-wrapper .mu-ab-tester-result-container .mu-ab-tester-result-single {
+  padding: 30px 0 30px 0;
+}
+
+.mu-ab-result-wrapper .mu-ab-tester-result-container .mu-ab-tester-result-single p {
+  line-height: 28px;
+}
+
+.mu-ab-result-wrapper .mu-ab-tester-result-container .mu-ab-tester-result-single .mu-uppercase {
+  text-transform: uppercase;
+}
+
+.mu-body-wrapper {
+  background-color: #27ae60;
+}
+
+.mu-body-wrapper .mu-content-box {
+  background-color: #FFFFFF;
+  border: 2px dashed #111111;
+}
+
+.mu-hero-wrapper .mu-hero-homepage-container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.mu-hero-wrapper .mu-hero-homepage-container .mu-emoji {
+  font-size: 22px;
+}
+
+.mu-hero-wrapper .mu-hero-homepage-container .mu-mami-pixelated {
+  width: 30%;
+  height: auto;
+}
+
+.mu-hero-wrapper .mu-hero-homepage-container .mu-mp3 {
+  margin: 30px 0 0 0;
+}
+
+.mu-hero-wrapper .mu-hero-homepage-container .mu-mp3 figcaption {
+  padding-bottom: 20px;
+}

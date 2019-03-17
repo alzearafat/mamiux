@@ -1,23 +1,40 @@
 {% extends "app_abtest/main/abtest_base.html" %}
-{% block title %}MamiUX{% endblock %}
+{% block title %}A/B Testing Dashboard - MamiUX{% endblock %}
 {% load staticfiles %}
 {% load humanize %}
 {% block content %}
 
-    <!-- HERO -->
-    <div class="mu-hero-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    list test dasboard
-                    <ul>
-                    {% for abtest in abtest_list_dashboard %}
-                        <li>{{ abtest.design_title }}</li>
-                    {% endfor %}
-                    </ul>
+<!-- A/B TEST DASHBOARD LIST -->
+<div class="mu-ab-dashboard-wrapper">
+    <div class="mu-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mu-ab-dashboard-container">
+                    <section class="message-list">
+                        <section class="message -right">
+                            <!-- Balloon -->
+                            <div class="nes-balloon from-right">
+                                <p>Pilih A/B Testing favorit mu!</p>
+                            </div>
+                            <img src="{% static "img/mami-pixelated.png" %}" class="mu-mami-pixelated" />
+                        </section>
+                    </section>
+                    <div class="nes-container with-title">
+                        <p class="title mu-padding-bottom-30px">A/B Testing List</p>
+                        <div class="lists">
+                            <ul class="nes-list is-disc">
+                                {% for abtest in abtest_list_dashboard %}
+                                <li class="mu-list">
+                                    <a href="{% url 'abtest:abtest_results' pk=abtest.pk %}" style="padding-left: 10px;">{{ abtest.design_title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
