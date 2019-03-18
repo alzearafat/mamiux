@@ -1,41 +1,22 @@
-{% extends "app_abtest/main/abtest_base.html" %}
+{% extends "app_abtest/main/abtest_base_static.html" %}
 {% block title %}Welcome to MamiUX{% endblock %}
 {% load staticfiles %}
 {% load humanize %}
 {% block content %}
 <!-- HERO -->
 <div class="mu-hero-wrapper">
-    <div class="mu-container">
-        <div class="row center-xs">
-            <div class="col-xs-12">
+    <div class="container">
+        <div class="columns">
+            <div class="column col-12">
                 <div class="mu-hero-homepage-container">
-                    <section class="message-list">
-                        <section class="message -right">
-                            <!-- Balloon -->
-                            <div class="nes-balloon from-right">
-                                <p>Hello there, welcome to MamiUX!</p>
-                            </div>
-                            <img src="{% static "img/mami-pixelated.png" %}" class="mu-mami-pixelated" />
-                        </section>
-                    </section>
-                    <div class="nes-container with-title is-centered">
-                        <p class="title" style="padding-bottom: 20px;">GET <span class="mu-emoji">💩</span> DONE</p>
-                        <p><a href="" class="nes-btn is-success mu-width-full">A/B Testing</a></p>
-                        <p><a href="" class="nes-btn is-disabled mu-width-full">Usability Testing (Coming Soon)</a></p>
-                        <p><a href="" class="nes-btn is-disabled mu-width-full">User Persona (Coming Soon)</a></p>
-                        <p><a href="" class="nes-btn is-disabled mu-width-full">Design Survey (Coming Soon)</a></p>
-                        </p>
+                    <h1>A set of tools from Mamikos UX Team</h1>
+                    <p>We help people find their home and unleash social impact trhough technology and design.</p>
+                    <div class="mu-hero-cta">
+                        <a href="" class="button">Login Staff</a>
                     </div>
-                    <br />
-                    <figure class="mu-mp3">
-                        <figcaption>And some tune...</figcaption>
-                        <p>
-                          <audio controls loop=true src="{% static "img/zelda.mp3" %}">
-                            Your browser does not support the
-                            <code>audio</code> element.
-                          </audio>
-                        </p>
-                    </figure>
+                    <div class="mu-hero-image">
+                        <img src="{% static "img/dashboard.png" %}">
+                    </div>
                 </div>
             </div>
         </div>

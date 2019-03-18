@@ -1,15 +1,91 @@
+// A/B TEST DASHBOARD
+
+.mu-body-wrapper {
+    background-color: $mu-color-dasboard-bg;
+}
+
 .mu-ab-dashboard-wrapper {
 
-    .mu-ab-dashboard-container {
+    .table.table-hover tbody tr:hover {
 
-        padding-top: 100px;
-        padding-bottom: 50px;
-
-        .mu-mami-pixelated {
-            width: 30%;
-            height: auto;
+        background: $mu-color-green-light !important;
+        
+        a {
+            color: $mu-color-green;
         }
-
     }
 
+    table {
+        background-color: $mu-color-white;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+
+            th, td {
+              padding: 20px;
+              text-align: left;
+            }
+
+        thead {
+            font-size: 16px;
+        }
+
+        a {
+            color: $mu-color-text-dark;
+        }
+    }
+    
+    .mu-feather-icon-check {
+        color: $mu-color-green;
+    }
+
+    .mu-feather-icon-cancel {
+        color: $mu-color-red;
+    }
+
+    .mu-new-button {
+        margin: 30px 0;
+    }
+
+    .mu-screenshot-rounded {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    .mu-dashboard-heading-wrapper{
+        h2 {
+
+            span {
+                font-family: $mu-font-tiempo;
+                font-size: 24px;
+                padding-top: 8px;
+            }
+        }
+
+        margin: 70px 0 30px 0;
+    }
+
+    .card {
+        border: 0;
+        color: #4B4F56;
+        vertical-align: top;
+        height: auto;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
+        white-space: normal;
+        -webkit-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+        -moz-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+        transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+
+        &:hover {
+            box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
+            transform: translate(0, -20px);
+            transition-delay: 0s !important;
+        }
+    }
+
+    .mu-card-subtitle {
+        padding-top: 10px;
+        font-size: 16px;
+    }
 }

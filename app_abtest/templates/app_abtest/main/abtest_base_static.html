@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Include All Styles-->
+    {% include "app_abtest/partials/_header.html" %}
+    <!--EOC-->
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<header>
+    <!--Include Navbar-->
+    {# {% include "app_abtest/partials/_navbar.html" %} #}
+    <!--EOC-->
+</header>
+
+<body>
+    <div class="mu-content-box">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script>
+      feather.replace()
+    </script>
+</body>
+<footer class="footer">
+    <!--Include Footer-->
+    {% include "app_abtest/partials/_footer.html" %}
+    <!--EOC-->
+</footer>
+
+</html>

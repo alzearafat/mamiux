@@ -1,16 +1,20 @@
 <div class="mu-navbar-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="nes-container is-rounded">
-                    <div class="mu-navbar">
-                        <ul style="padding-left: 0px;">
-                            <li class="nes-text is-primary"><a href="">Homepage</a></li>
-                            <li class="nes-text is-primary"><a href="">A/B Testings</a></li>
-                            <li class="nes-text is-error mu-float-right"><a href="">Logout</a></li>
-                        </ul>
-                    </div>
-                    <hr />
+    <div class="mu-navbar-panel">
+        <div class="container grid-lg">
+            <div class="columns">
+                <div class="column col-12">
+                    <header class="navbar">
+                        <section class="navbar-section">
+                            <a href="..." class="navbar-brand mr-2">Spectre.css</a>
+                            <a href="..." class="btn btn-link">Docs</a>
+                            <a href="..." class="btn btn-link">GitHub</a>
+                        </section>
+                        <section class="navbar-section">
+                            <div class="mu-admin-avatar">
+                                Hello, {{ user.get_username }}
+                            </div>
+                        </section>
+                    </header>
                 </div>
             </div>
         </div>

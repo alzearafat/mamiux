@@ -1,0 +1,89 @@
+.mu-sidebar {
+    height: 100%;
+    width: 270px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $mu-color-white;
+    overflow-x: hidden;
+    padding-top: 0px;
+
+    .mu-sidebar-logo {
+        padding: 30px 0 25px 30px;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: 1px solid #e0e0e0;
+    }
+
+    .mu-sidebar-menu-panel {
+
+        padding-top: 50px;
+
+        a {
+            padding: 15px 10px 10px 30px;
+            text-decoration: none;
+            font-size: 16px;
+            color: $mu-color-text-dark;
+            display: block;
+
+            &:hover {
+                color: $mu-color-green;
+                padding: 15px 10px 10px 30px;
+            }
+        }
+
+        .mu-sidebar-menu-label {
+            padding: 0 0 30px 30px;
+            color: $mu-color-label-grey;
+        }
+
+        .mu-sidebar-menu-item {
+            margin: 0 0 20px 0;
+
+            .mu-menu-text {
+                display: inline-block;
+                font-size: 16px;
+                line-height: 1.5;
+                color: rgb(57, 63, 73);
+                margin-left: 16px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .mu-feather-icon {
+                color: #B3B3B3;
+            }
+
+            &:hover {
+                background-color: $mu-color-green-light;
+                border-right: 5px solid $mu-color-green;
+
+                .mu-feather-icon {
+                    color: $mu-color-green;
+                }
+
+                span {
+                    color: $mu-color-green;
+                }
+            }
+        }
+    }
+}
+
+.mu-ab-dashboard-wrapper {
+    margin-left: 270px;
+    /* Same as the width of the mu-sidebar */
+    /* Increased text to enable scrolling */
+    padding: 0px 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .mu-sidebar {
+        padding-top: 15px;
+    }
+
+    .mu-sidebar a {
+        font-size: 18px;
+    }
+}

@@ -4,37 +4,70 @@
 {% load humanize %}
 {% block content %}
 
+<!--Include Sidebar-->
+{% include "app_abtest/partials/_sidebar.html" %}
+<!--EOC-->
+<!--Include Navbar-->
+<div class="container">
+    <div class="columns">
+        {% include "app_abtest/partials/_navbar.html" %}
+    </div>
+</div>
+<!--EOC-->
 <!-- A/B TEST DASHBOARD LIST -->
 <div class="mu-ab-dashboard-wrapper">
-    <div class="mu-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="mu-ab-dashboard-container">
-                    <section class="message-list">
-                        <section class="message -right">
-                            <!-- Balloon -->
-                            <div class="nes-balloon from-right">
-                                <p>Pilih A/B Testing favorit mu!</p>
-                            </div>
-                            <img src="{% static "img/mami-pixelated.png" %}" class="mu-mami-pixelated" />
-                        </section>
-                    </section>
-                    <div class="nes-container with-title">
-                        <p class="title mu-padding-bottom-30px">A/B Testing List</p>
-                        <div class="lists">
-                            <ul class="nes-list is-disc">
-                                {% for abtest in abtest_list_dashboard %}
-                                <li class="mu-list">
-                                    <a href="{% url 'abtest:abtest_results' pk=abtest.pk %}" style="padding-left: 10px;">{{ abtest.design_title }}</a>
-                                </li>
-                                {% endfor %}
-                            </ul>
+    <section id="Heading & Button">
+        <div class="mu-dashboard-heading-wrapper">
+            <div class="container">
+                <div class="columns">
+                    <div class="column col-6">
+                        <h2>🍌 <span style="padding-left: 10px;">A/B Testings Dashboard</span></h2>
+                    </div>
+                    <div class="column col-6">
+                        <div class="float-right">
+                            <button class="mu-button">New A/B Test</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section id="Table Result">
+        <div class="container">
+            <div class="columns">
+                <div class="column col-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>SCREENSHOTS</th>
+                                <th>A/B TEST TITLE</th>
+                                <th>DATE CREATED</th>
+                                <th>PUBLISHED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for abtest in abtest_list_dashboard %}
+                            <tr>
+                                <td>
+                                    <div class="mu-screenshot-rounded" style="background: url('{{ request.META.HTTP_NAME }}/media/{{ abtest.design_image_a }}') no-repeat center center; background-size: cover;"></div>
+                                </td>
+                                <td><a href="{% url 'abtest:abtest_results' pk=abtest.pk %}">{{ abtest.design_title }}</a></td>
+                                <td>{{ abtest.is_created }}</td>
+                                <td>
+                                    {% if abtest.is_published %}
+                                    ✔️
+                                    {% else %}
+                                    ❌
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-
+<!-- EOL -->
 {% endblock %}

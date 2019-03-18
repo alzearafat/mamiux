@@ -4,6 +4,16 @@
 {% load humanize %}
 {% block content %}
 
+<!--Include Sidebar-->
+{% include "app_abtest/partials/_sidebar.html" %}
+<!--EOC-->
+<!--Include Navbar-->
+<div class="container">
+    <div class="columns">
+        {% include "app_abtest/partials/_navbar.html" %}
+    </div>
+</div>
+
 <!-- A/B TEST DASHBOARD LIST -->
 <div class="mu-ab-result-wrapper">
     

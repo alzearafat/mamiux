@@ -51,7 +51,9 @@ def ABTestListDashboardView(request):
             abtest_list_dashboard = paginator.page(1)
         except EmptyPage:
             abtest_list_dashboard = paginator.page(paginator.num_pages)
-        context = {'abtest_list_dashboard': abtest_list_dashboard}
+        context = {
+            'abtest_list_dashboard': abtest_list_dashboard,
+        }
         return render(request, template, context)
 
 
