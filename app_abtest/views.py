@@ -1,9 +1,11 @@
+from hashlib import md5
 from datetime import datetime
 from django.utils import timezone
 from app_user.models import Tester
 from django.db.models import Count
 from .forms import ABTestCommentModelForm
 from .models import Design, DesignComment
+from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -81,7 +83,6 @@ def ABTestDetailDashboardView(request, pk):
     }
     return render(request, template, context)
 
-
 # ---------------------------
 
 
@@ -113,6 +114,7 @@ def ABTestDetailTesterView(request, pk):
             result = form.save(commit = False)
             result.design_abtest_title = Design.objects.get(design_title=abtest.design_title)
             result.design_abtest_tester_user = Tester.objects.get(user=request.user)
+            result.design_abtest_tester_email = request.user.email
             result.is_created = datetime.now()
             result.abtest = abtest
             result.save()

@@ -8,6 +8,7 @@
 {{ form.media }}
 
 <p>{{ abtest.design_title }}</p>
+{{request.user.email}}
 <p><img src="{{ abtest.design_image_a.url }}" /></p>
 <form action="" enctype="multipart/form-data" method="post">
   {% csrf_token %}

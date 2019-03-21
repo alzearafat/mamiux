@@ -1,23 +1,63 @@
 // GLOBAL
 
-$mu-font-lato: 'Roboto', sans-serif;
-$mu-font-tiempo: Tiempo, Arial, Helvetica, sans-serif;
+$mu-font-poppins: 'Poppins', 
+sans-serif;
+$mu-font-tiempo: Tiempo,
+Arial,
+Helvetica,
+sans-serif;
 
 * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-family: $mu-font-lato;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 a {
-  text-decoration: none !important;
+    text-decoration: none !important;
+    font-family: $mu-font-poppins;
 }
 
-a.button, a.button-yellow, a.button-black, a.button-action {
+body,
+p,
+strong,
+    {
+    font-family: $mu-font-poppins;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    // font-family: $mu-font-tiempo;
+}
+
+.clearfix::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+a.button,
+a.button-yellow,
+a.button-black,
+a.button-action {
     text-decoration: none;
 }
-.button, .button-yellow, a.button-yellow, .button-black, a.button-black, .button-action, a.button-action, input[type="submit"], a.button, a.button-yellow, a.button-black, a.button-action {
+
+.button,
+.button-yellow,
+a.button-yellow,
+.button-black,
+a.button-black,
+.button-action,
+a.button-action,
+input[type="submit"],
+a.button,
+a.button-yellow,
+a.button-black,
+a.button-action {
     padding: 17px 34px;
     display: inline-block;
     border: 2.5px solid #000000;
@@ -36,13 +76,36 @@ a.button, a.button-yellow, a.button-black, a.button-action {
     transition: all 0.3s ease-in-out;
 }
 
-a.button:hover, a.button-yellow:hover, a.button-black:hover, a.button-action:hover, a.button:focus, a.button-yellow:focus, a.button-black:focus, a.button-action:focus {
+a.button:hover,
+a.button-yellow:hover,
+a.button-black:hover,
+a.button-action:hover,
+a.button:focus,
+a.button-yellow:focus,
+a.button-black:focus,
+a.button-action:focus {
     color: #f7f7f7;
 }
-.index-hero .button, .services-hero .button, .index-hero .button-yellow, .services-hero .button-yellow, .index-hero .button-black, .services-hero .button-black, .index-hero .button-action, .services-hero .button-action {
+
+.index-hero .button,
+.services-hero .button,
+.index-hero .button-yellow,
+.services-hero .button-yellow,
+.index-hero .button-black,
+.services-hero .button-black,
+.index-hero .button-action,
+.services-hero .button-action {
     margin-top: 25px;
 }
-.button:hover, .button-yellow:hover, .button-black:hover, .button-action:hover, .button:focus, .button-yellow:focus, .button-black:focus, .button-action:focus {
+
+.button:hover,
+.button-yellow:hover,
+.button-black:hover,
+.button-action:hover,
+.button:focus,
+.button-yellow:focus,
+.button-black:focus,
+.button-action:focus {
     background-color: #000000;
     color: #ffffff;
 }
@@ -53,6 +116,10 @@ a.button:hover, a.button-yellow:hover, a.button-black:hover, a.button-action:hov
 
 .mu-float-right {
     float: right;
+}
+
+.mu-uppercase {
+    text-transform: uppercase;
 }
 
 // PADDING 10px

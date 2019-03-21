@@ -36,6 +36,7 @@ class ABTestCommentAdmin(SummernoteModelAdmin):
         'design_abtest_tester_user',
         'design_abtest_tester_name',
         'design_abtest_tester_phone',
+        'design_abtest_tester_email',
         'design_abtest_choice',
         'is_created',
         'is_modified',

@@ -34,7 +34,9 @@
 
         .mu-sidebar-menu-label {
             padding: 0 0 30px 30px;
-            color: $mu-color-label-grey;
+            color: $mu-color-green;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
         .mu-sidebar-menu-item {
@@ -52,7 +54,7 @@
             }
 
             .mu-feather-icon {
-                color: #B3B3B3;
+                color: $mu-color-green;
             }
 
             &:hover {
@@ -69,13 +71,6 @@
             }
         }
     }
-}
-
-.mu-ab-dashboard-wrapper {
-    margin-left: 270px;
-    /* Same as the width of the mu-sidebar */
-    /* Increased text to enable scrolling */
-    padding: 0px 30px;
 }
 
 @media screen and (max-height: 450px) {

@@ -18,8 +18,9 @@ class ABTestCommentModelForm(forms.ModelForm):
             'design_abtest_choice',
             'design_abtest_comment',
         )
-        exclude = [ 'design_abtest_title', 'design_abtest_tester_user', 'is_published']
+        exclude = [ 'design_abtest_title', 'design_abtest_tester_user', "design_abtest_tester_email", 'is_published']
         widgets = {
+            'design_abtest_tester_email': forms.HiddenInput(),
             'design_abtest_title': forms.HiddenInput(),
             'design_abtest_tester_user': forms.HiddenInput(),
             'is_published': forms.HiddenInput(),

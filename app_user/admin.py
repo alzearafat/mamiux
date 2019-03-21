@@ -12,6 +12,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display = [
         'user',
         'tester_name',
+        'tester_email',
     ]
 
 admin.site.register(Tester, UserAdmin)

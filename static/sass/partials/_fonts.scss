@@ -1,43 +1,51 @@
-// ROBOTO FONT
+// Poppins FONT
 
 @font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Thin.ttf) format("truetype"), url(../fonts/Roboto-ThinItalic.ttf) format("truetype");
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Thin.ttf) format("truetype"), url(../fonts/Poppins-ThinItalic.ttf) format("truetype");
     font-weight: 100;
     font-style: thin
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Light.ttf) format("truetype"), url(../fonts/Roboto-LightItalic.ttf) format("truetype");
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Light.ttf) format("truetype"), url(../fonts/Poppins-LightItalic.ttf) format("truetype");
     font-weight: 200;
     font-style: lighter
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Regular.ttf) format("truetype"), url(../fonts/Roboto-Italic.ttf) format("truetype");
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Regular.ttf) format("truetype"), url(../fonts/Poppins-Italic.ttf) format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Medium.ttf) format("truetype"), url(../fonts/Roboto-MediumItalic.ttf) format("truetype");
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Medium.ttf) format("truetype"), url(../fonts/Poppins-MediumItalic.ttf) format("truetype");
     font-weight: 500;
     font-style: medium
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Bold.ttf) format("truetype"), url(../fonts/Roboto-BoldItalic.ttf) format("truetype");
+    font-family: Poppins;
+    src: url(../fonts/Poppins-SemiBold.ttf) format("truetype"), url(../fonts/Poppins-SemiBoldItalic.ttf) format("truetype");
+    font-weight: 600;
+    font-style: semibold
+}
+
+
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Bold.ttf) format("truetype"), url(../fonts/Poppins-BoldItalic.ttf) format("truetype");
     font-weight: 700;
     font-style: bold
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Black.ttf) format("truetype"), url(../fonts/Roboto-BlackItalic.ttf) format("truetype");
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Black.ttf) format("truetype"), url(../fonts/Poppins-BlackItalic.ttf) format("truetype");
     font-weight: 900;
     font-style: black
 }

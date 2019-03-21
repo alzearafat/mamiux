@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'taggit',
     'crispy_forms',
     'django_summernote',
-    'captcha'
+    'captcha',
 ]
 
 MIDDLEWARE = [

@@ -1,9 +1,10 @@
 {% extends "app_abtest/main/abtest_base.html" %}
 {% block title %}{{ abtest.design_title }} - MamiUX List Results{% endblock %}
 {% load staticfiles %}
+{% load app_tags %}
 {% load humanize %}
 {% block content %}
-
+<script src="{% static "js/Chart.bundle.min.js" %}" type="text/javascript" charset="utf-8"></script>
 <!--Include Sidebar-->
 {% include "app_abtest/partials/_sidebar.html" %}
 <!--EOC-->
@@ -13,78 +14,161 @@
         {% include "app_abtest/partials/_navbar.html" %}
     </div>
 </div>
-
 <!-- A/B TEST DASHBOARD LIST -->
 <div class="mu-ab-result-wrapper">
     
-    <div class="mu-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="mu-ab-result-title-wrapper">
-                    <div class="nes-container is-rounded">
+    <section id="Heading Title">
+        <div class="mu-ab-result-title-wrapper">
+            <div class="container">
+                <div class="columns">
+                    <div class="column col-12">
                         <div class="mu-ab-result-title is-centered">
                             <p>Testing results for:</p>
-                            <h2 class="mu-typing-effect">{{ abtest.design_title }}</h2>
+                            <h2>{{ abtest.design_title }}</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- CHART -->
-    <div class="mu-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="mu-ab-result-container">
-                    <section class="message-list">
-                        <section class="message -right">
-                            <!-- Balloon -->
-                            <div class="nes-balloon from-right">
-                                <p>Total votes kali ini adalah: <b>{{ total_ab.count }}</b></p>
-                            </div>
-                            <img src="{% static "img/mami-pixelated.png" %}" class="mu-mami-pixelated" />
-                        </section>
-                    </section>
-                    <div class="nes-container with-title">
-                        <p class="title mu-padding-bottom-20px">A/B Vote Chart</p>
-                        <p>A : {{ total_a.count }}</p>
-                        <p><progress class="nes-progress is-primary" value="{{ total_a.count }}" max="50"></progress></p>
-                        <div class="mu-padding-bottom-10px"></div>
-                        <p>B : {{ total_b.count }}</p>
-                        <p><progress class="nes-progress is-error" value="{{ total_ab.count }}" max="50"></progress></p>
+    <section id="Stats Boxes">
+        <div class="mu-ab-cards-result-container">
+            <div class="container">
+                <div class="columns">
+                    <div class="column col-3">
+                        <div class="mu-ab-stats-card">
+                            <p class="text-card-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>multiple-11</title><g stroke-width="1" fill="#6ded78" stroke="#6ded78"><rect x="1.5" y="2.5" width="3" height="3" rx="1.5" ry="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-cap="butt" data-color="color-2"></rect> <path d="M3.5,14.5h-2v-3H.5v-3a1,1,0,0,1,1-1h1" fill="none" stroke-linecap="round" stroke-linejoin="round" data-cap="butt" data-color="color-2"></path> <rect x="11.5" y="2.5" width="3" height="3" rx="1.5" ry="1.5" transform="translate(26 8) rotate(-180)" fill="none" stroke-linecap="round" stroke-linejoin="round" data-cap="butt" data-color="color-2"></rect> <path d="M12.5,14.5h2v-3h1v-3a1,1,0,0,0-1-1h-1" fill="none" stroke-linecap="round" stroke-linejoin="round" data-cap="butt" data-color="color-2"></path> <rect x="6" y="0.5" width="4" height="4" rx="2" ry="2" fill="none" stroke="#05c608" stroke-linecap="round" stroke-linejoin="round" data-cap="butt"></rect> <path d="M10.5,15.5h-5v-4h-1v-3a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2v3h-1Z" fill="none" stroke="#05c608" stroke-linecap="round" stroke-linejoin="round" data-cap="butt"></path></g></svg>
+                                <span class="mu-stats-item">TOTAL VOTES</span>
+                            </p>
+                            <hr />
+                            <h3>{{ total_ab.count }}</h3>
+                        </div>
+                    </div>
+                    <div class="column col-3">
+                        <div class="mu-ab-stats-card">
+                            <p class="text-card-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>b-chart</title><g fill="#6ded78"><path data-color="color-2" d="M1,15h13c0.552,0,1-0.448,1-1v0c0-0.552-0.448-1-1-1H1c-0.552,0-1,0.448-1,1v0 C0,14.552,0.448,15,1,15z"></path> <rect x="6" y="1" fill="#05c608" width="3" height="10"></rect> <rect x="1" y="5" fill="#05c608" width="3" height="6"></rect> <rect x="11" y="7" fill="#05c608" width="3" height="4"></rect></g></svg>
+                                <span class="mu-stats-item">VOTES <b>A</b></span>
+                            </p>
+                            <hr />
+                            <h3>{{ total_a.count }}</h3>
+                        </div>
+                    </div>
+                    <div class="column col-3">
+                        <div class="mu-ab-stats-card">
+                            <p class="text-card-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>b-chart</title><g fill="#6ded78"><path data-color="color-2" d="M1,15h13c0.552,0,1-0.448,1-1v0c0-0.552-0.448-1-1-1H1c-0.552,0-1,0.448-1,1v0 C0,14.552,0.448,15,1,15z"></path> <rect x="6" y="1" fill="#05c608" width="3" height="10"></rect> <rect x="1" y="5" fill="#05c608" width="3" height="6"></rect> <rect x="11" y="7" fill="#05c608" width="3" height="4"></rect></g></svg>
+                                <span class="mu-stats-item">VOTES <b>B</b></span>
+                            </p>
+                            <hr />
+                            <h3>{{ total_b.count }}</h3>
+                        </div>
+                    </div>
+                    <div class="column col-3">
+                        <div class="mu-ab-stats-card">
+                            <p class="text-card-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>opening-times</title><g stroke-width="1" fill="#6ded78" stroke="#6ded78"><line x1="0.5" y1="5.5" x2="15.5" y2="5.5" fill="none" stroke="#05c608" stroke-linecap="round" stroke-linejoin="round"></line> <path d="M15.5,5.5v-2a1,1,0,0,0-1-1H1.5a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1h5" fill="none" stroke="#05c608" stroke-linecap="round" stroke-linejoin="round"></path> <line x1="4.5" y1="0.5" x2="4.5" y2="2.5" fill="none" stroke="#05c608" stroke-linecap="round" stroke-linejoin="round"></line> <line x1="11.5" y1="0.5" x2="11.5" y2="2.5" fill="none" stroke="#05c608" stroke-linecap="round" stroke-linejoin="round"></line> <circle cx="11.5" cy="11.5" r="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></circle> <polyline points="11.5 9.5 11.5 11.5 13.5 11.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-color="color-2"></polyline></g></svg>
+                                <span class="mu-stats-item">TEST DATE</span>
+                            </p>
+                            <hr />
+                            <h3>{{ abtest.is_created|naturalday }}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- EOL -->
+    </section>
 
-
-    <!-- TOTAL VOTES -->
-    <div class="mu-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="mu-ab-tester-result-container">
-                    <div class="nes-container with-title">
-                        <p class="title mu-padding-bottom-30px">Tester Comments</p>
-                        {% for abtest_result in abtest_results %}
+    <section id="Chart">
+        <div class="mu-chart-wrapper">
+            <div class="container">
+                <div class="columns">
+                    <div class="column col-12">
+                        <div class="mu-chartjs">
+                            <canvas id="myChart" width="400" height="100">
+                                <!-- EMPTY -->
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="Comment Boxes">
+        <div class="mu-comment-wrapper">
+            <div class="container">
+                <div class="columns">
+                    {% for abtest_result in abtest_results %}
+                    <div class="column col-4">
+                        <div class="mu-ab-tester-comment-card">
                             <div class="mu-ab-tester-result-single">
-                                <p>Name: {{ abtest_result.design_abtest_tester_name }}</p>
-                                <p>Phone: {{ abtest_result.design_abtest_tester_phone }}</p>
-                                <p class="mu-uppercase">A/B?: {{ abtest_result.design_abtest_choice }}</p>
-                                <p>Comment:</p>
+                                <img src="{{ abtest_result.design_abtest_tester_email|gravatar:50 }}" />
+                                <h5>{{ abtest_result.design_abtest_tester_name }}</h5>
+                                <p class="comment-a-or-b">Votes: <span class="mu-uppercase"><b>{{ abtest_result.design_abtest_choice }}</b></span></p>
+                                <p class="mu-comment-label">Comment:</p>
                                 <p style="padding-bottom: 10px;">{{ abtest_result.design_abtest_comment }}</p>
-                                ----------------------------------------------
+                                <hr />
+                                <ul>
+                                    <li class="mu-padding-li">{{ abtest_result.design_abtest_tester_email }}</li>
+                                    <li>{{ abtest_result.design_abtest_tester_phone }}</li>
+                                </ul>
                             </div>
-                        {% endfor %}
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-    <!-- EOL -->
+    </section>
 
 </div>
 
+<script>
+var ctx = document.getElementById('myChart')
+var myBarChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: [
+            "# A",
+            "# B",
+        ],
+        datasets: [{
+            data: [
+                {{ total_a.count }}, {{ total_b.count }}
+            ],
+            backgroundColor: [
+                "#1e90ff",
+                "#ff7f50",
+            ],
+            hoverBackgroundColor: [
+                "#1e90ff",
+                "#ff7f50",
+            ]
+        }]
+    },
+    options: {
+        legend: {
+            display: false
+        },
+        title: {
+            display: true,
+            text: 'Total votes: {{ total_ab.count }}'
+        },
+        scales: {
+            xAxes: [{
+                display: true,
+                ticks: {
+                    min: 0
+                }
+            }],
+            yAxes: [{
+                display: true
+            }],
+        }
+    }
+});
+</script>
 {% endblock %}

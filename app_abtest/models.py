@@ -79,6 +79,13 @@ class DesignComment(models.Model):
         on_delete = models.CASCADE
     )
 
+    design_abtest_tester_email = models.EmailField(
+        verbose_name = "Email",
+        null = True,
+        blank = True,
+        max_length = 225,
+    )
+
     design_abtest_title = models.ForeignKey(
         Design, 
         verbose_name = "Testing Title",
@@ -137,7 +144,8 @@ class DesignComment(models.Model):
     # def save(self, *args, **kwargs):
     #     if self.__class__.objects.filter(design_abtest_tester_user=self.design_abtest_tester_user).count()>=1:
     #         return None
-    #     return super().save(*args, **kwargs) 
+    #     return super().save(*args, **kwargs)
+    
 
     class Meta:
         verbose_name_plural = "Test Results"

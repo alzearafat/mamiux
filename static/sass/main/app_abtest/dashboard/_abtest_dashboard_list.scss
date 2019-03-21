@@ -6,10 +6,14 @@
 
 .mu-ab-dashboard-wrapper {
 
+    margin-left: 270px;
+    /* Same as the width of the mu-sidebar */
+    padding: 0px 30px;
+
     .table.table-hover tbody tr:hover {
 
         background: $mu-color-green-light !important;
-        
+
         a {
             color: $mu-color-green;
         }
@@ -21,10 +25,11 @@
         height: auto;
         border-radius: 5px;
 
-            th, td {
-              padding: 20px;
-              text-align: left;
-            }
+        th,
+        td {
+            padding: 20px;
+            text-align: left;
+        }
 
         thead {
             font-size: 16px;
@@ -34,7 +39,7 @@
             color: $mu-color-text-dark;
         }
     }
-    
+
     .mu-feather-icon-check {
         color: $mu-color-green;
     }
@@ -53,7 +58,7 @@
         border-radius: 100%;
     }
 
-    .mu-dashboard-heading-wrapper{
+    .mu-dashboard-heading-wrapper {
         h2 {
 
             span {
@@ -66,26 +71,26 @@
         margin: 70px 0 30px 0;
     }
 
-    .card {
-        border: 0;
-        color: #4B4F56;
-        vertical-align: top;
-        height: auto;
-        box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
-        white-space: normal;
-        -webkit-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
-        -moz-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
-        transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+    // .card {
+    //     border: 0;
+    //     color: #4B4F56;
+    //     vertical-align: top;
+    //     height: auto;
+    //     box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
+    //     white-space: normal;
+    //     -webkit-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+    //     -moz-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+    //     transition: all 250ms cubic-bezier(.02, .01, .47, 1);
 
-        &:hover {
-            box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
-            transform: translate(0, -20px);
-            transition-delay: 0s !important;
-        }
-    }
+    //     &:hover {
+    //         box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
+    //         transform: translate(0, -20px);
+    //         transition-delay: 0s !important;
+    //     }
+    // }
 
-    .mu-card-subtitle {
-        padding-top: 10px;
-        font-size: 16px;
-    }
+    // .mu-card-subtitle {
+    //     padding-top: 10px;
+    //     font-size: 16px;
+    // }
 }

@@ -23,6 +23,13 @@ class Tester(models.Model):
         blank = False
     )
 
+    tester_email = models.EmailField(
+        verbose_name = "Tester Email",
+        null = True,
+        blank = True,
+        max_length = 225,
+    )
+
     def __str__(self):
         return str(self.user)
 
