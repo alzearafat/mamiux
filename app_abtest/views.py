@@ -5,6 +5,7 @@ from .forms import ABTestCommentModelForm
 from .models import Design, DesignComment
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -40,7 +41,7 @@ def ABTestListDashboardView(request):
 
     # Make sure only staff can access this page
     if not request.user.is_staff:
-        raise PermissionDenied
+        raise PermissionDenied('Upss... Maaf, halaman ini hanya untuk staff')
     else:
         abtest_list_dashboard = Design.objects.filter(is_published = True).order_by("-is_created")
         template = "app_abtest/dashboard/abtest_dashboard_list.html"
@@ -102,12 +103,12 @@ def ABTestDetailTesterView(request, pk):
     except Design.DoesNotExist:
         return request('/') #Nanti harus ke 404
 
-    form = ABTestCommentModelForm(request.POST, instance=abtest)
+    form = ABTestCommentModelForm(request.POST)
     template = "app_abtest/tester/abtest_tester_detail.html"
     context = {'abtest': abtest, 'form': form}
     if request.method == "POST":
         # yesterday = timezone.now() - timezone.timedelta(days=1)
-        form = ABTestCommentModelForm(request.POST, instance=abtest)
+        form = ABTestCommentModelForm(request.POST)
         if form.is_valid():
             result = form.save(commit = False)
             result.design_abtest_title = Design.objects.get(design_title=abtest.design_title)
@@ -118,7 +119,7 @@ def ABTestDetailTesterView(request, pk):
             result.save()
             return HttpResponseRedirect('/thanks/') #Nanti harus thank you page
     else:
-        form = ABTestCommentModelForm(instance=abtest)
+        form = ABTestCommentModelForm()
     return render(request, template, context)
 
 
