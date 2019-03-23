@@ -95,24 +95,10 @@ class DesignComment(models.Model):
         on_delete = models.CASCADE
     )
 
-    design_abtest_tester_name = models.CharField(
-        verbose_name = "Nama",
-        default = "Tester",
-        max_length = 225,
-        null = False,
-        blank = False
-    )
-
-    design_abtest_tester_phone = models.CharField(
-        verbose_name = "No handphone",
-        max_length=128,
-        null = True,
-        blank = True
-    )
-
     design_abtest_choice = models.CharField(
         choices = AB,
         verbose_name = "Pilih A/B?",
+        help_text = 'Mana yang menurut kamu paling mudah digunakan? A atau B?',
         null = True,
         blank = False,
         max_length=1
@@ -120,6 +106,7 @@ class DesignComment(models.Model):
 
     design_abtest_comment = models.TextField(
         verbose_name = "Komentar",
+        help_text = 'Kenapa kamu memilih pilihan itu? Bisa coba tolong jelaskan?',
         null = False,
         blank = False
     )

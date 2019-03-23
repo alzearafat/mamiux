@@ -1,0 +1,165 @@
+.mu-content-auth {
+    
+    background-color: rgb(250, 249, 247);
+    width: 100%;
+    height: auto;
+
+    .mu-auth-wrapper {
+        
+        height: 100vh;
+
+        .loggedOutBackgroundContainer {
+            overflow: hidden;
+
+            .slidingBackground {
+                background: url('../img/dots.png') repeat-x;
+                background-size: auto;
+                background-size: contain;
+                height: 223px;
+                width: 9141px;
+                animation: slide 600s linear infinite;
+            }
+
+            @keyframes slide {
+              0%{
+                transform: translate3d(0, 0, 0);
+              }
+              100%{
+                transform: translate3d(-3047px, 0, 0); /* The image width */
+              }
+            }
+        }
+
+        .mu-auth-center {            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            margin-top: 15%;
+
+            .mamikos-logo-auth {
+                width: 20%;
+                padding-bottom: 50px;
+            }
+            
+        }
+
+        .mu-auth-box {
+            
+            background-color: $mu-color-white;
+            width: 560px;
+            height: auto;
+            border-radius: 5px;
+            padding: 50px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
+
+            .login-blocks {
+                position: relative;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                margin-bottom: 15px;
+                padding: 18px 18px 18px 15px;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                border-style: solid;
+                border-width: 2px;
+                border-color: rgba(36, 49, 63, .11);
+                border-radius: 4px;
+                background-color: #fff;
+                box-shadow: none;
+            }
+
+            .w-inline-block {
+                width: 500px;
+                max-width: 100%;
+                display: inline-flex !important;
+            }
+
+            h3 {
+                text-align: center;
+                font-size: 22px;
+                font-weight: 500;
+                padding-bottom: 50px;
+            }
+
+            a {
+                -webkit-transition: opacity 240ms ease, background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease, color 240ms ease, padding 240ms ease, -webkit-transform 240ms ease, -webkit-filter 240ms ease, -webkit-box-flex 240ms ease, -webkit-flex 240ms ease;
+                transition: opacity 240ms ease, background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease, color 240ms ease, padding 240ms ease, -webkit-transform 240ms ease, -webkit-filter 240ms ease, -webkit-box-flex 240ms ease, -webkit-flex 240ms ease;
+                transition: opacity 240ms ease, transform 240ms ease, filter 240ms ease, flex 240ms ease, background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease, color 240ms ease, padding 240ms ease;
+                transition: opacity 240ms ease, transform 240ms ease, filter 240ms ease, flex 240ms ease, background-color 240ms ease, box-shadow 240ms ease, border-color 240ms ease, color 240ms ease, padding 240ms ease, -webkit-transform 240ms ease, -webkit-filter 240ms ease, -webkit-box-flex 240ms ease, -webkit-flex 240ms ease, -ms-flex 240ms ease;
+                color: #ffbf03;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .login-blocks:hover {
+                border-color: #ea4335;
+            }
+
+            a:hover {
+                color: #615775;
+
+                .account-arrow {
+                    transform-style: preserve-3d;
+                    transition: transform 300ms ease 0s;
+                    transform: translateX(6px) translateY(0px) translateZ(0px);
+                }
+            }
+
+            a:active,
+            a:hover {
+                outline: 0;
+            }
+
+            .login-card-icon {
+                width: 40px;
+                margin-right: 15px;
+            }
+
+            img {
+                max-width: 100%;
+                vertical-align: middle;
+                display: inline-block;
+                border: 0;
+            }
+
+            .login-card-heading {
+                margin-bottom: 0px;
+                color: #24313f;
+                font-size: 1.2em;
+                line-height: 1.4em;
+                font-weight: 500;
+            }
+
+            .login-card-text {
+                color: rgba(36, 49, 63, .6);
+                font-size: 1.05em;
+
+                span {
+                    color: $mu-color-black;
+                }
+            }
+
+            .account-arrow {
+                position: absolute;
+                top: 32px;
+                right: 25px;
+                bottom: 0px;
+                display: block;
+                width: 20px;
+                transform-style: preserve-3d;
+                transition: transform 200ms ease 0s;
+                transform: translateX(0px) translateY(0px) translateZ(0px);
+            }
+
+        }
+
+    }
+
+}

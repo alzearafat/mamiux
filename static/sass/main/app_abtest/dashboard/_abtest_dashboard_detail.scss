@@ -10,13 +10,15 @@
 
         .mu-ab-result-title {
             h2 {
-                font-style: $mu-font-tiempo !important;
+                font-family: $mu-font-tiempo !important;
                 font-size: 28px;
                 margin-bottom: 50px;
+                font-weight: 400 !important;
             }
 
             p {
                 color: #747d8c;
+                padding-bottom: 15px;
             }
         }
     }
@@ -107,36 +109,30 @@
                     margin-bottom: 10px;
                 }
 
-                ul {
-                    padding-right: 0px;
-                    margin-left: 0px;
+                h5 {
+                    text-transform: capitalize;
+                    font-size: 22px;
                 }
-
-                li {
-                    display: inline-block;
-                    text-transform: uppercase;
-                    font-size: 12px;
-                    line-height: 24px;
-                    color: #9e9e9e;
-                }
-
 
                 p {
                     font-size: 14px;
                     line-height: 24px;
                 }
 
-                .mu-padding-li {
-                    padding-right: 30px;
+                .mu-coment-email {
+                    font-size: 12px;
+                    line-height: 24px;
+                    color: #9e9e9e;
                 }
 
                 .comment-a-or-b {
-                    padding: 10px 0;
+                    padding: 20px 0;
                 }
 
                 .mu-comment-label {
                     text-transform: uppercase;
                     color: #9e9e9e;
+                    padding-bottom: 10px;
                 }
             }
         }

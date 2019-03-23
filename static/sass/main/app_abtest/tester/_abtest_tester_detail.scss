@@ -1,0 +1,112 @@
+// SINGLE AB TEST FOR TESTER
+
+.mu-ab-test-wrapper {
+
+    padding: 10% 0;
+
+    .title-with-icons {
+      padding: 0em 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .title-with-icons svg {
+      opacity: 0.1;
+      position: absolute;
+      left: 50%;
+      top: -20px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .mu-ab-test-screenshot {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        background-color: white;
+        vertical-align: top;
+        text-align: center;
+        height: 500px;
+        margin: 20px 0;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
+        white-space: normal;
+        -webkit-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+        -moz-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+        transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+        color: #4B4F56;
+        padding: 20px 30px;
+        border-radius: 5px;
+
+        &:hover {
+            box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
+            transform: translate(0, -20px);
+            transition-delay: 0s !important;
+        }
+    }
+
+    .mu-ab-test-forms {
+        background-color: $mu-color-white;
+        padding: 50px 30px;
+
+        hr {
+            border: 1px solid #f4f4f4;
+            margin-bottom: 30px;
+        }
+
+        .captcha {
+            width: 200px;
+        }
+        
+        .mu-error-forms {
+            margin: 20px 0;
+        }
+
+        .mu-title {
+            padding-bottom: 30px;
+        }
+
+        .mu-desc {
+            padding: 20px 0;
+            line-height: 28px;
+        }
+        
+        .mu-forms {
+            
+            .control-group {
+                padding-bottom: 40px;
+
+                .asteriskField {
+                    color: #F42;
+                }
+
+                .controls {
+                    padding-top: 20px;
+                    
+                    #error_1_id_design_abtest_choice,
+                    #error_1_id_design_abtest_comment {
+                        display: none;
+                    }
+
+                    #error_1_id_captcha {
+
+                        strong {
+                            color: #F42 !important;
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    .mu-ab {
+        font-weight: bold;
+        font-family: mu-font-tiempo;
+        font-size: 42px;
+        text-align: center;
+    }
+
+}

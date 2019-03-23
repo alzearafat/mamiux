@@ -34,8 +34,6 @@ class ABTestCommentAdmin(SummernoteModelAdmin):
     list_display = [
         'design_abtest_title',
         'design_abtest_tester_user',
-        'design_abtest_tester_name',
-        'design_abtest_tester_phone',
         'design_abtest_tester_email',
         'design_abtest_choice',
         'is_created',

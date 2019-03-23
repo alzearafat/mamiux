@@ -13,8 +13,6 @@ class ABTestCommentModelForm(forms.ModelForm):
     class Meta:
         model = DesignComment
         fields = (
-            'design_abtest_tester_name',
-            'design_abtest_tester_phone',
             'design_abtest_choice',
             'design_abtest_comment',
         )
@@ -24,6 +22,5 @@ class ABTestCommentModelForm(forms.ModelForm):
             'design_abtest_title': forms.HiddenInput(),
             'design_abtest_tester_user': forms.HiddenInput(),
             'is_published': forms.HiddenInput(),
-            'design_abtest_choice': forms.RadioSelect()
         }
 

@@ -183,18 +183,23 @@ SUMMERNOTE_CONFIG = {
 }
 
 # CRISP_FORMS_SETTINGS
-# CRISPY_CLASS_CONVERTERS = {
-#     'textinput': "control input is-medium dj-input",
-#     'textInput': "control input is-medium dj-input",
-#     'passwordinput': "control input is-medium dj-input",
-#     'password': "control input is-medium dj-input",
-#     'urlinput': "control input is-medium dj-input",
-#     'numberinput': "control input is-medium dj-input",
-#     'emailinput': "control input is-medium dj-input",
-#     'dateinput': "control input is-medium dj-input",
-#     'textarea': "control input is-medium dj-input",
-#     'select': "control input is-medium dj-input",
-#     'tagwidget': "control input is-medium dj-input",
-#     'markdownx-editor': "control input is-medium dj-input",
-#     'markdownx': "control input is-medium dj-input"
-# }
+CRISPY_CLASS_CONVERTERS = {
+    'textinput': "control input is-medium mu-input",
+    'textInput': "control input is-medium mu-input",
+    'passwordinput': "control input is-medium mu-input",
+    'password': "control input is-medium mu-input",
+    'urlinput': "control input is-medium mu-input",
+    'numberinput': "control input is-medium mu-input",
+    'emailinput': "control input is-medium mu-input",
+    'dateinput': "control input is-medium mu-input",
+    'textarea': "textarea mu-input",
+    'select': "control input is-medium mu-input",
+    'tagwidget': "control input is-medium mu-input",
+    'captchaanswerinput' : "control input is-medium mu-input"
+}
+
+CRISPY_FAIL_SILENTLY = not DEBUG
+
+
+
+

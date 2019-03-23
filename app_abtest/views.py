@@ -1,15 +1,14 @@
-from hashlib import md5
 from datetime import datetime
-from django.utils import timezone
 from app_user.models import Tester
 from django.db.models import Count
 from .forms import ABTestCommentModelForm
 from .models import Design, DesignComment
+from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 
 # STATIC PAGE VIEWS -----------------
@@ -103,14 +102,13 @@ def ABTestDetailTesterView(request, pk):
     except Design.DoesNotExist:
         return request('/') #Nanti harus ke 404
 
-    form = ABTestCommentModelForm()
+    form = ABTestCommentModelForm(request.POST, instance=abtest)
     template = "app_abtest/tester/abtest_tester_detail.html"
     context = {'abtest': abtest, 'form': form}
     if request.method == "POST":
-        yesterday = timezone.now() - timezone.timedelta(days=1)
-        form = ABTestCommentModelForm(request.POST)
+        # yesterday = timezone.now() - timezone.timedelta(days=1)
+        form = ABTestCommentModelForm(request.POST, instance=abtest)
         if form.is_valid():
-            human = True
             result = form.save(commit = False)
             result.design_abtest_title = Design.objects.get(design_title=abtest.design_title)
             result.design_abtest_tester_user = Tester.objects.get(user=request.user)
@@ -118,9 +116,10 @@ def ABTestDetailTesterView(request, pk):
             result.is_created = datetime.now()
             result.abtest = abtest
             result.save()
-            return redirect('/') #Nanti harus thank you page
+            return HttpResponseRedirect('/thanks/') #Nanti harus thank you page
     else:
-        return render(request, template, context)
+        form = ABTestCommentModelForm(instance=abtest)
+    return render(request, template, context)
 
 
 def ABTestThanksView(request):

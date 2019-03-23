@@ -2,6 +2,8 @@
 
 .mu-body-wrapper {
     background-color: $mu-color-dasboard-bg;
+    height: auto;
+    width: 100%;
 }
 
 .mu-ab-dashboard-wrapper {
@@ -70,27 +72,4 @@
 
         margin: 70px 0 30px 0;
     }
-
-    // .card {
-    //     border: 0;
-    //     color: #4B4F56;
-    //     vertical-align: top;
-    //     height: auto;
-    //     box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
-    //     white-space: normal;
-    //     -webkit-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
-    //     -moz-transition: all 250ms cubic-bezier(.02, .01, .47, 1);
-    //     transition: all 250ms cubic-bezier(.02, .01, .47, 1);
-
-    //     &:hover {
-    //         box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
-    //         transform: translate(0, -20px);
-    //         transition-delay: 0s !important;
-    //     }
-    // }
-
-    // .mu-card-subtitle {
-    //     padding-top: 10px;
-    //     font-size: 16px;
-    // }
 }

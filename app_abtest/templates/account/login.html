@@ -1,36 +1,39 @@
-{% extends "app_abtest/main/abtest_base.html" %}
+{% extends "app_abtest/main/abtest_base_auth.html" %}
 {% load i18n %}
 {% load socialaccount %}
+{% load staticfiles %}
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block content %}
-
-    <div class="mu-auth-wrapper">
-        <div class="container-narrow-2">
-            <div class="columns">
-                <div class="column">
+<div class="mu-auth-wrapper">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="mu-auth-center">
+                    <img src="{% static "img/mamikos_logo.svg" %}" class="mamikos-logo-auth">
                     <div class="mu-auth-box">
-                        <p class="control" style="text-align: center;">
-                                <form class="login" method="POST" action="{% url 'account_login' %}">
-                                  {% csrf_token %}
-                                  {{ form.as_p }}
-                                  {% if redirect_field_value %}
-                                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                                  {% endif %}
-                                  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-                                  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-                                </form>
-                            <a class="button is-large is-dark" href="{% provider_login_url "google" %}">
-                                <span class="icon">
-                                    <span class="typcn typcn-social-github"></span>
-                                </span>
-                                <span>Login with Google</span>
-                            </a>
-                        </p>
+                        <h3>We're so happy you're here! 👋</h3>
+                        <a href="{% provider_login_url "google" %}" class="login-blocks w-inline-block" data-ix="account-card">
+                            <div>
+                                <img src="{% static "img/GoogleLogo.svg" %}" class="login-card-icon">
+                            </div>
+                            <div>
+                                <div class="login-card-heading">
+                                    Login with Google
+                                </div>
+                                <div class="login-card-text">
+                                    Please login before continue
+                                </div>
+                            </div>
+                            <img src="{% static "img/RightArrow.svg" %}" class="account-arrow">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <div class="loggedOutBackgroundContainer" style="position: fixed; bottom: 0px;">
+        <div class="slidingBackground">
+        </div>
+    </div>
+</div>
 {% endblock %}
