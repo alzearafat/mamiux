@@ -1,0 +1,25 @@
+{% extends "app_abtest/main/abtest_base_static.html" %}
+{% block title %}Thank you!{% endblock %}
+{% load staticfiles %}
+{% load humanize %}
+{% block content %}
+<!-- HERO -->
+<section id="Thanks-Hero">
+    <!-- <meta http-equiv="refresh" content="5; url=https://mamikos.com/" /> -->
+    <div class="mu-thanks-wrapper">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="mu-thanks-container">
+                        <h1>Terimakasih! 🍻</h1>
+                        <p>Semua saran dan masukan kamu sangat berarti bagi kami</p>
+                        <div class="mu-thanks-image">
+                            <img src="{% static "img/thanks-1.svg" %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

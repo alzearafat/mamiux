@@ -1,0 +1,29 @@
+// THANKS PAGE
+
+.mu-thanks-wrapper {
+    
+    text-align: center;
+
+    .mu-thanks-container {
+
+        padding: 10% 0;
+
+        h1 {
+            font-family: $mu-font-tiempo;
+            font-size: 48px;
+            padding-bottom:30px;
+            font-weight: 400;
+            color: $mu-color-black;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .mu-thanks-image {
+            padding: 100px 0;
+        }
+
+    }
+
+}

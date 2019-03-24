@@ -25,6 +25,18 @@ def ABTestStaticHomepageView(request):
     template = "app_abtest/static/abtest_static_homepage.html"
     return render(request, template)
 
+
+def ABTestThanksView(request):
+    
+    """
+    Render Thanks Static
+    :param request:
+    :return:
+    """
+    
+    template = "app_abtest/static/abtest_tester_thanks.html"
+    return render(request, template)
+
 # ---------------------------
 
 
@@ -121,10 +133,5 @@ def ABTestDetailTesterView(request, pk):
     else:
         form = ABTestCommentModelForm()
     return render(request, template, context)
-
-
-def ABTestThanksView(request):
-    template = "app_abtest/tester/abtest_tester_thanks.html"
-    return render(template)
 
 # ---------------------------

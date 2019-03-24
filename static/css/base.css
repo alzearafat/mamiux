@@ -689,7 +689,7 @@ a.mu-button:focus {
 
 .mu-ab-test-wrapper .mu-ab-test-forms .mu-desc {
   padding: 20px 0;
-  line-height: 28px;
+  line-height: 30px;
 }
 
 .mu-ab-test-wrapper .mu-ab-test-forms .mu-forms .control-group {
@@ -753,4 +753,28 @@ a.mu-button:focus {
 .mu-hero-wrapper .mu-hero-homepage-container .mu-hero-image img {
   width: 100%;
   height: auto;
+}
+
+.mu-thanks-wrapper {
+  text-align: center;
+}
+
+.mu-thanks-wrapper .mu-thanks-container {
+  padding: 10% 0;
+}
+
+.mu-thanks-wrapper .mu-thanks-container h1 {
+  font-family: Tiempo, Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  padding-bottom: 30px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.mu-thanks-wrapper .mu-thanks-container p {
+  font-size: 18px;
+}
+
+.mu-thanks-wrapper .mu-thanks-container .mu-thanks-image {
+  padding: 100px 0;
 }

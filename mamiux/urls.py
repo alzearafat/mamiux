@@ -24,6 +24,7 @@ urlpatterns = [
 
     # STATIC PAGE
     path('', views.ABTestStaticHomepageView, name='abtest_static_homepage'),
+    path('thanks/', views.ABTestThanksView, name='abtest_static_thanks'),
 
     #MAIN
     path('admin/', admin.site.urls),
