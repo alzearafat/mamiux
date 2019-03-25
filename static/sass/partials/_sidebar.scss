@@ -53,17 +53,9 @@
                 text-overflow: ellipsis;
             }
 
-            .mu-feather-icon {
-                color: $mu-color-green;
-            }
-
             &:hover {
                 background-color: $mu-color-green-light;
                 border-right: 5px solid $mu-color-green;
-
-                .mu-feather-icon {
-                    color: $mu-color-green;
-                }
 
                 span {
                     color: $mu-color-green;

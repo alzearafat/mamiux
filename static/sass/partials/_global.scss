@@ -1,6 +1,6 @@
 // GLOBAL
 
-$mu-font-poppins: 'Poppins', 
+$mu-font-lato: 'Lato', 
 sans-serif;
 $mu-font-tiempo: Tiempo,
 Arial,
@@ -15,14 +15,14 @@ sans-serif;
 
 a {
     text-decoration: none !important;
-    font-family: $mu-font-poppins;
+    font-family: $mu-font-lato;
 }
 
 body,
 p,
 strong,
     {
-    font-family: $mu-font-poppins;
+    font-family: $mu-font-lato;
 }
 
 h1,
@@ -46,12 +46,30 @@ a.button-action {
     text-decoration: none;
 }
 
-.table.is-hoverable tbody tr:not(.is-selected):hover {
-    background-color: $mu-color-green-light;
+.title-with-icons {
+    padding: 0em 0;
+    overflow: hidden;
+    position: relative;
 
-    a {
-        color: $mu-color-green;
+    .mu-doodle-top {
+        opacity: 0.1;
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        pointer-events: none;
     }
+}
+
+.help-block {
+    font-size: 16px !important;
+}
+
+.mu-body-wrapper {
+    background-color: $mu-color-dasboard-bg;
+    height: auto;
+    width: 100%;
 }
 
 .mu-button {
@@ -76,6 +94,13 @@ a.button-action {
 a.mu-button:hover,
 a.mu-button:focus {
     color: #f7f7f7;
+}
+
+.mu-container {
+    max-width: 960px;
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .index-hero .mu-button,

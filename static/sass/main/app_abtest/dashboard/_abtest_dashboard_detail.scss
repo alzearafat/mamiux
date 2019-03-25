@@ -2,18 +2,19 @@
 
 .mu-ab-result-wrapper {
 
-    margin-left: 270px;
-    /* Same as the width of the mu-sidebar */
-    padding: 70px;
+    padding: 5% 0;
+
+    .mu-backlink {
+        margin-bottom: 100px;
+    }
 
     .mu-ab-result-title-wrapper {
 
         .mu-ab-result-title {
             h2 {
-                font-family: $mu-font-tiempo !important;
                 font-size: 28px;
                 margin-bottom: 50px;
-                font-weight: 400 !important;
+                font-weight: 700 !important;
             }
 
             p {
@@ -41,6 +42,7 @@
             transition: all 250ms cubic-bezier(.02, .01, .47, 1);
             color: #4B4F56;
             padding: 30px;
+            border-radius: 3px;
 
             &:hover {
                 box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
@@ -54,7 +56,7 @@
             }
 
             h3 {
-                font-style: $mu-font-poppins !important;
+                font-style: $mu-font-lato !important;
                 font-size: 22px;
                 text-align: center;
             }
@@ -68,10 +70,14 @@
 
     .mu-chart-wrapper {
         background-color: $mu-color-white;
-        padding: 30px;
+        padding: 40px 0;
         width: 100%;
         height: auto;
         margin: 70px 0;
+
+        .mu-chartjs {
+            padding: 20px 0;
+        }
     }
 
     .mu-comment-wrapper {
@@ -91,6 +97,7 @@
             transition: all 250ms cubic-bezier(.02, .01, .47, 1);
             color: #4B4F56;
             padding: 20px 30px;
+            border-radius: 5px;
 
             &:hover {
                 box-shadow: 0 40px 40px rgba(0, 0, 0, .16);
@@ -136,6 +143,10 @@
                 }
             }
         }
+    }
+
+    .mu-pagination-wrapper {
+        margin-top: 10%;
     }
 
 }

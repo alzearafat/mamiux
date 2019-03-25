@@ -4,68 +4,127 @@
 {% load humanize %}
 {% block content %}
 
-<!--Include Sidebar-->
-{% include "app_abtest/partials/_sidebar.html" %}
-<!--EOC-->
-
-<!--Include Navbar-->
-{% include "app_abtest/partials/_navbar.html" %}
-<!--EOC-->
-
-<!-- A/B TEST DASHBOARD LIST -->
-
-<div class="mu-ab-dashboard-wrapper">
-    <section id="Heading & Button">
-        <div class="mu-dashboard-heading-wrapper">
-            <div class="columns">
-                <div class="column is-12">
-                    <h2><span class="">🍌</span> <span style="padding-left: 10px;">A/B Testings Dashboard</span></h2>
+    <!-- A/B TEST DASHBOARD LIST -->
+    <!-- Include Doodle -->
+    {% include "app_abtest/partials/_doodle.html" %}
+    <!--EOC-->
+    <div class="mu-ab-dashboard-wrapper">
+        <section id="Search Form">
+            <div class="mu-dashboard-search-wrapper">
+                <div class="mu-container">
+                    <div class="columns">
+                        <div class="column is-12">
+                            <div class="mu-dashboard-search-content">
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <input class="input is-large mu-input" type="text" placeholder="What are you looking for?">
+                                        <span class="icon is-small is-left">
+                                            <i data-feather="search"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="Table Result">
-        
-            <div class="columns">
-                <div class="column is-12">
-                    <table class="table is-hoverable">
-                        <thead>
-                            <tr>
-                                <th>SCREENSHOTS</th>
-                                <th>A/B TEST TITLE</th>
-                                <th>DATE CREATED</th>
-                                <th>PUBLISHED</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for abtest in abtest_list_dashboard %}
+        </section>
+        <section id="Heading & Button">
+            <div class="mu-dashboard-heading-wrapper">
+                <div class="mu-container">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <h2>
+                                <span class="">🍌</span>
+                                <span>MamiUX Dashboard</span>
+                            </h2>
+                        </div>
+                        <div class="column is-6">
+                            <span class="mu-feather-icon">Welcome back, <strong style="text-transform: capitalize;">{{ request.user }}</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Table Result">
+            <div class="mu-ab-card-wrapper">
+                <div class="mu-container">
+                    <div class="columns is-centered is-multiline">
+                        {% for abtest in abtest_list_dashboard %}
+                        <div class="column is-4">
                             <a href="{% url 'abtest:abtest_results' pk=abtest.pk %}">
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'abtest:abtest_results' pk=abtest.pk %}">
-                                            <div class="mu-screenshot-rounded" style="background: url('{{ request.META.HTTP_NAME }}/media/{{ abtest.design_image_a }}') no-repeat center center; background-size: cover;">
-                                                <!-- -->
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td><a href="{% url 'abtest:abtest_results' pk=abtest.pk %}">{{ abtest.design_title }}</a></td>
-                                    <td>{{ abtest.is_created|naturalday }}</td>
-                                    <td>
+                                <div class="mu-ab-card-item-box">
+                                    <div class="mu-ab-card-content">
                                         {% if abtest.is_published %}
-                                        ✔️
+                                        <div class="mu-ab-card-ispublished">
+                                            <span>PUBLISHED</span>
+                                        </div>
                                         {% else %}
-                                        ❌
+                                        <div class="mu-ab-card-notpublished">
+                                            <span>NOT PUBLISHED</span>
+                                        </div>
                                         {% endif %}
-                                    </td>
-                                </tr>
+                                        <div class="mu-ab-card-title">
+                                            <a href="{% url 'abtest:abtest_results' pk=abtest.pk %}">
+                                                <h3>{{ abtest.design_title }}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="mu-ab-card-date">
+                                            <p>{{ abtest.is_created|naturalday }}</p>
+                                        </div>
+                                        <p><i data-feather="more-horizontal"></i></p>
+                                    </div>
+                                </div>
                             </a>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-       
-    </section>
-</div>
-<!-- EOL -->
-{% endblock %}
+        </section>
+        <section id="Pagination">
+            <div class="mu-pagination-wrapper">
+                <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                    {% if abtest_list_dashboard.has_other_pages %}
+                        <ul class="pagination-list">
+                            {% if abtest_list_dashboard.has_previous %}
+                                <li>
+                                    <a
+                                        href="?page={{ abtest_list_dashboard.previous_page_number }}"
+                                        class="pagination-previous">&laquo;
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="pagination-ellipsis">
+                                    <span>&laquo;</span></li>
+                            {% endif %}
+                            {% for i in abtest_list_dashboard.paginator.page_range %}
+                                {% if abtest_list_dashboard.number == i %}
+                                    <li class="pagination-link is-current">
+                                        <span>{{ i }}
+                                            <span class="sr-only">(current)</span>
+                                        </span>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="?page={{ i }}" class="pagination-link">{{ i }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if abtest_list_dashboards.has_next %}
+                                <li>
+                                    <a href="?page={{ abtest_list_dashboard.next_page_number }}" class="pagination-next">&raquo;</a>
+                                </li>
+                            {% else %}
+                                <li class="pagination-ellipsis">
+                                    <span>&raquo;</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+        <!-- EOL -->
+    {% endblock %}

@@ -34,7 +34,7 @@ def ABTestThanksView(request):
     :return:
     """
     
-    template = "app_abtest/static/abtest_tester_thanks.html"
+    template = "app_abtest/static/abtest_static_thanks.html"
     return render(request, template)
 
 # ---------------------------
@@ -55,9 +55,9 @@ def ABTestListDashboardView(request):
     if not request.user.is_staff:
         raise PermissionDenied('Upss... Maaf, halaman ini hanya untuk staff')
     else:
-        abtest_list_dashboard = Design.objects.filter(is_published = True).order_by("-is_created")
+        abtest_list_dashboard = Design.objects.all().order_by("-is_created")
         template = "app_abtest/dashboard/abtest_dashboard_list.html"
-        paginator = Paginator(abtest_list_dashboard, 10)
+        paginator = Paginator(abtest_list_dashboard, 3)
         page = request.GET.get('page', 1)
         try:
             abtest_list_dashboard = paginator.page(page)
@@ -86,6 +86,14 @@ def ABTestDetailDashboardView(request, pk):
     total_ab = DesignComment.objects.filter(design_abtest_title=abtest.id).annotate(num_ab=Count('design_abtest_choice'))
     total_a = DesignComment.objects.filter(design_abtest_title=abtest.id, design_abtest_choice="a").annotate(num_a=Count('design_abtest_choice'))
     total_b = DesignComment.objects.filter(design_abtest_title=abtest.id, design_abtest_choice="b").annotate(num_b=Count('design_abtest_choice'))
+    paginator = Paginator(abtest_results, 9)
+    page = request.GET.get('page', 1)
+    try:
+        abtest_results = paginator.page(page)
+    except PageNotAnInteger:
+        abtest_results = paginator.page(1)
+    except EmptyPage:
+        abtest_results = paginator.page(paginator.num_pages)
     context = {
         'abtest': abtest, 
         'abtest_results': abtest_results,

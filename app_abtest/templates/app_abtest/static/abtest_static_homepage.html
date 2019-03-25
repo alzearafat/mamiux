@@ -1,4 +1,4 @@
-{% extends "app_abtest/main/abtest_base_static.html" %}
+{% extends "app_abtest/main/abtest_base.html" %}
 {% block title %}Welcome to MamiUX{% endblock %}
 {% load staticfiles %}
 {% load humanize %}
@@ -10,10 +10,14 @@
             <div class="columns">
                 <div class="column is-12">
                     <div class="mu-hero-homepage-container">
-                        <h1>A set of tools from Mamikos UX Team</h1>
-                        <p>We help people find their home and unleash social impact trhough technology and design.</p>
+                        <h1>A/B Testing tools from Mamikos UX Team</h1>
+                        <p>We help people find their home and unleash social impact trhough design and technology.</p>
                         <div class="mu-hero-cta">
-                            <a href="" class="mu-button">Login Staff</a>
+                            {% if request.user.is_authenticated and request.user.is_staff %}
+                            <a href="{% url 'app_abtest:abtest_list_dashboard' %}" class="mu-button">Dashboard</a>
+                            {% else %}
+                            <a href="/accounts/login/" class="mu-button">Login Staff</a>
+                            {% endif %}
                         </div>
                         <div class="mu-hero-image">
                             <img src="{% static "img/dashboard.png" %}">

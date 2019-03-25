@@ -7,45 +7,45 @@
 {% block content %}
 {{ form.media }}
 
-<section id="ab-test-wrapper">
-    <div class="mu-ab-test-wrapper">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-4">
-                    <div class="mu-ab-test-screenshot" style="background: url('{{ request.META.HTTP_NAME }}/media/{{ abtest.design_image_a }}') no-repeat center center; background-size: cover;">
-                    </div>
-                    <div class="mu-ab">
-                         A
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <div class="mu-ab-test-screenshot" style="background: url('{{ request.META.HTTP_NAME }}/media/{{ abtest.design_image_b }}') no-repeat center center; background-size: cover;">
-                    </div>
-                    <div class="mu-ab">
-                        B
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <!-- Include Doodle -->
-                    {% include "app_abtest/partials/_doodle.html" %}
-                    <!--EOC-->
-                    <div class="mu-ab-test-forms">
-                        <div class="mu-ab-detail-heading">
-                            <p>Halo {{ request.user }} 👋,</p>
-                            <p class="mu-desc">Dari dua desain/app di sebelah (<b>A</b> dan <b>B</b>), mana yang menurut kamu <b>paling mudah di gunakan?</b> Silahkan pilih di bawah 🍻</p>
+    <section id="ab-test-wrapper">
+        <div class="mu-ab-test-wrapper">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="mu-ab-test-screenshot" style="background: url('{{ request.META.HTTP_NAME }}/media/{{ abtest.design_image_a }}') no-repeat center center; background-size: cover;">
                         </div>
-                        <hr />
-                        <form action="" method="post" enctype="multipart/form-data" class="mu-forms">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            <br />
-                            <button class="mu-button" type='submit'>Submit</button>
-                        </form>
+                        <div class="mu-ab">
+                            A
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="mu-ab-test-screenshot" style="background: url('{{ request.META.HTTP_NAME }}/media/{{ abtest.design_image_b }}') no-repeat center center; background-size: cover;">
+                        </div>
+                        <div class="mu-ab">
+                            B
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <!-- Include Doodle -->
+                        {% include "app_abtest/partials/_doodle.html" %}
+                        <!--EOC-->
+                        <div class="mu-ab-test-forms">
+                            <div class="mu-ab-detail-heading">
+                                <p>Halo {{ request.user }} 👋,</p>
+                                <p class="mu-desc">Dari dua design/app di samping (<b>A</b> dan <b>B</b>), mana yang menurut kamu <b>paling mudah di gunakan?</b> Silahkan pilih di bawah 👇</p>
+                            </div>
+                            <hr />
+                            <form action="" method="post" enctype="multipart/form-data" class="mu-forms">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <br />
+                                <button class="mu-button" type='submit'>Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 {% endblock %}

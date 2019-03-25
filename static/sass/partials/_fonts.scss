@@ -1,51 +1,36 @@
-// Poppins FONT
+// Lato FONT
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Thin.ttf) format("truetype"), url(../fonts/Poppins-ThinItalic.ttf) format("truetype");
+    font-family: Lato;
+    src: url(../fonts/Lato-Thin.ttf) format("truetype"), url(../fonts/Lato-ThinItalic.ttf) format("truetype");
     font-weight: 100;
     font-style: thin
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Light.ttf) format("truetype"), url(../fonts/Poppins-LightItalic.ttf) format("truetype");
+    font-family: Lato;
+    src: url(../fonts/Lato-Light.ttf) format("truetype"), url(../fonts/Lato-LightItalic.ttf) format("truetype");
     font-weight: 200;
     font-style: lighter
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Regular.ttf) format("truetype"), url(../fonts/Poppins-Italic.ttf) format("truetype");
+    font-family: Lato;
+    src: url(../fonts/Lato-Regular.ttf) format("truetype"), url(../fonts/Lato-Italic.ttf) format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Medium.ttf) format("truetype"), url(../fonts/Poppins-MediumItalic.ttf) format("truetype");
-    font-weight: 500;
-    font-style: medium
-}
-
-@font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-SemiBold.ttf) format("truetype"), url(../fonts/Poppins-SemiBoldItalic.ttf) format("truetype");
-    font-weight: 600;
-    font-style: semibold
-}
-
-
-@font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Bold.ttf) format("truetype"), url(../fonts/Poppins-BoldItalic.ttf) format("truetype");
+    font-family: Lato;
+    src: url(../fonts/Lato-Bold.ttf) format("truetype"), url(../fonts/Lato-BoldItalic.ttf) format("truetype");
     font-weight: 700;
     font-style: bold
 }
 
 @font-face {
-    font-family: Poppins;
-    src: url(../fonts/Poppins-Black.ttf) format("truetype"), url(../fonts/Poppins-BlackItalic.ttf) format("truetype");
+    font-family: Lato;
+    src: url(../fonts/Lato-Black.ttf) format("truetype"), url(../fonts/Lato-BlackItalic.ttf) format("truetype");
     font-weight: 900;
     font-style: black
 }

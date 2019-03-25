@@ -4,22 +4,6 @@
 
     padding: 10% 0;
 
-    .title-with-icons {
-        padding: 0em 0;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .title-with-icons svg {
-        opacity: 0.1;
-        position: absolute;
-        left: 50%;
-        top: -20px;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        pointer-events: none;
-    }
-
     .mu-ab-test-screenshot {
         display: inline-block;
         position: relative;
@@ -48,6 +32,7 @@
     .mu-ab-test-forms {
         background-color: $mu-color-white;
         padding: 50px 30px;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, .08);
 
         hr {
             border: 1px solid #f4f4f4;
