@@ -11,7 +11,8 @@ class Design(models.Model):
     """
     
     id = models.AutoField(
-        primary_key = True
+        primary_key = True,
+        unique = True
     )
 
     design_title = models.CharField(
@@ -106,7 +107,7 @@ class DesignComment(models.Model):
 
     design_abtest_comment = models.TextField(
         verbose_name = "Komentar",
-        help_text = 'Kenapa kamu memilih pilihan itu? Bisa coba tolong jelaskan?',
+        help_text = 'Kenapa kamu memilih pilihan itu? Bisa coba tolong jelaskan? <b>(Minimal 30 karakter)</b>',
         null = False,
         blank = False
     )
@@ -138,4 +139,4 @@ class DesignComment(models.Model):
         verbose_name_plural = "Test Results"
 
     def __str__(self):
-        return str(self.design_abtest_tester_name)
+        return str(self.design_abtest_tester_user)

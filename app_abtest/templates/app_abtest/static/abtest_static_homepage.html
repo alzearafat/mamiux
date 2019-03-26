@@ -1,4 +1,4 @@
-{% extends "app_abtest/main/abtest_base.html" %}
+{% extends "app_abtest/main/abtest_base_homepage.html" %}
 {% block title %}Welcome to MamiUX{% endblock %}
 {% load staticfiles %}
 {% load humanize %}
@@ -19,13 +19,13 @@
                             <a href="/accounts/login/" class="mu-button">Login Staff</a>
                             {% endif %}
                         </div>
-                        <div class="mu-hero-image">
-                            <img src="{% static "img/dashboard.png" %}">
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mu-hero-image">
+        <img src="{% static "img/hero-main.png" %}">
     </div>
 </section>
 {% endblock %}

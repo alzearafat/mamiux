@@ -7,6 +7,14 @@ Arial,
 Helvetica,
 sans-serif;
 
+html {
+    background-color: $mu-color-dasboard-bg;
+}
+
+.html-homepage {
+    background-color: $mu-color-white;
+}
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

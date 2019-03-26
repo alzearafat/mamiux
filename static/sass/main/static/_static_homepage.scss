@@ -2,7 +2,7 @@
 
 .mu-hero-wrapper {
 
-    padding: 5% 0 0 0;
+    padding: 8% 0 0 0;
     text-align: center !important;
 
     .mu-hero-homepage-container {
@@ -27,15 +27,18 @@
         }
 
         .mu-hero-cta {
-            margin: 50px 0 100px 0;
+            margin: 50px 0 0 0;
             text-align: center
         }
 
-        .mu-hero-image {
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
+    }
+
+}
+
+.mu-hero-image {
+
+    img {
+        width: 100%;
+        height: auto;
     }
 }

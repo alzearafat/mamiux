@@ -19,7 +19,7 @@ from django.urls import path, include
 from app_abtest import views
 from django.conf.urls.static import static
 
-
+handler404 = 'app_abtest.views.error_404_view'
 urlpatterns = [
 
     # STATIC PAGE

@@ -1,20 +1,20 @@
 {% extends "app_abtest/main/abtest_base.html" %}
-{% block title %}Thank you!{% endblock %}
+{% block title %}404 - Page Not Found - MamiUX{% endblock %}
 {% load staticfiles %}
 {% load humanize %}
 {% block content %}
 <!-- HERO -->
-<section id="Thanks Hero">
+<section id="404 Hero">
     <!-- <meta http-equiv="refresh" content="5; url=https://mamikos.com/" /> -->
-    <div class="mu-thanks-wrapper">
+    <div class="mu-404-wrapper">
         <div class="container">
             <div class="columns">
                 <div class="column is-12">
-                    <div class="mu-thanks-container">
-                        <h1>Terimakasih! 🍻</h1>
-                        <p>Semua saran dan masukan kamu sangat berarti bagi kami</p>
-                        <div class="mu-thanks-image">
-                            <img src="{% static "img/thanks-1.svg" %}">
+                    <div class="mu-404-container">
+                        <h1>404</h1>
+                        <p>Upss... This content does not exist</p>
+                        <div class="mu-404-image">
+                            <img src="{% static "img/404.svg" %}">
                         </div>
                     </div>
                 </div>

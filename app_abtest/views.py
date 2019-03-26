@@ -1,9 +1,10 @@
 from datetime import datetime
 from app_user.models import Tester
 from django.db.models import Count
+from django.http import HttpResponseRedirect
 from .forms import ABTestCommentModelForm
 from .models import Design, DesignComment
-from django.http import HttpResponseRedirect
+from django.http import Http404
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
@@ -36,6 +37,12 @@ def ABTestThanksView(request):
     
     template = "app_abtest/static/abtest_static_thanks.html"
     return render(request, template)
+
+
+# CUSTOM ERROR PAGE
+
+def error_404_view(request, exception):
+    return render(request,'app_abtest/static/404.html', locals())
 
 # ---------------------------
 
@@ -121,11 +128,13 @@ def ABTestDetailTesterView(request, pk):
     try:
         abtest = Design.objects.get(pk=pk)
     except Design.DoesNotExist:
-        return request('/') #Nanti harus ke 404
+        raise Http404("Test does not exist")
 
     form = ABTestCommentModelForm(request.POST)
     template = "app_abtest/tester/abtest_tester_detail.html"
     context = {'abtest': abtest, 'form': form}
+    if abtest.is_published != True and not request.user.is_staff:
+        raise Http404("Page does not exist")
     if request.method == "POST":
         # yesterday = timezone.now() - timezone.timedelta(days=1)
         form = ABTestCommentModelForm(request.POST)
