@@ -156,6 +156,103 @@
   }
 }
 
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .mu-container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-center .mamikos-logo-auth {
+    width: 50% !important;
+    padding-bottom: 40px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-box {
+    width: 100% !important;
+    padding: 20px 30px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-box h3 {
+    font-size: 18px !important;
+    padding-bottom: 25px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-box .account-arrow {
+    top: 24px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-box .login-card-icon {
+    width: 30px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-box .login-card-heading {
+    margin-bottom: 5px !important;
+    font-size: 16px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-box .login-card-text {
+    font-size: 14px !important;
+  }
+  .mu-content-auth .mu-auth-wrapper .mu-auth-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    margin-top: 15%;
+    padding: 5% !important;
+  }
+  .mu-thanks-wrapper .mu-thanks-container h1 {
+    font-size: 35px !important;
+  }
+  .mu-ab-test-wrapper {
+    padding: 3% !important;
+  }
+  .mu-hero-wrapper .mu-hero-homepage-container h1 {
+    font-size: 24px !important;
+  }
+  .mu-hero-wrapper .mu-hero-homepage-container p {
+    font-size: 18px !important;
+    width: 278px !important;
+    line-height: 31px !important;
+  }
+  .mu-hero-wrapper .footer {
+    padding-top: 10px !important;
+  }
+  .mu-footer-wrapper p {
+    font-size: 12px !important;
+  }
+  .mu-button {
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+  }
+  .mu-ab-dashboard-wrapper .mu-dashboard-heading-wrapper .mu-feather-icon {
+    margin-bottom: 30px !important;
+    float: left !important;
+  }
+  .mu-ab-dashboard-wrapper .mu-dashboard-heading-wrapper h2 {
+    font-size: 22px !important;
+  }
+  .mu-ab-dashboard-wrapper .mu-ab-card-wrapper .mu-ab-card-item-box {
+    margin: 0 !important;
+  }
+  .mu-ab-dashboard-wrapper .mu-ab-card-wrapper .mu-ab-card-item-box .mu-ab-card-content .mu-ab-card-title h3 {
+    font-size: 22px !important;
+  }
+  .mu-ab-result-wrapper {
+    padding: 5% !important;
+  }
+  .mu-ab-result-wrapper .mu-ab-result-title-wrapper .mu-ab-result-title h2 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .mu-hero-wrapper .mu-hero-homepage-container h1 {
+    font-size: 24px;
+  }
+}
+
 html {
   background-color: #faf9f7;
 }

@@ -12,7 +12,7 @@
         <section id="Search Form">
             <div class="mu-dashboard-search-wrapper">
                 <div class="mu-container">
-                    <div class="columns">
+                    <div class="columns is-mobile">
                         <div class="column is-12">
                             <div class="mu-dashboard-search-content">
                                 <div class="field">
@@ -64,10 +64,8 @@
                                             <span>NOT PUBLISHED</span>
                                         </div>
                                         {% endif %}
-                                        <div class="mu-ab-card-title">
-                                            <a href="{% url 'abtest:abtest_results' pk=abtest.pk %}">
-                                                <h3>{{ abtest.design_title }}</h3>
-                                            </a>
+                                        <div class="mu-ab-card-title">                                
+                                            <h3>{{ abtest.design_title }}</h3>
                                         </div>
                                         <div class="mu-ab-card-date">
                                             <p>{{ abtest.is_created|naturalday }}</p>
