@@ -1,6 +1,9 @@
 .DS_Store
 .vscode
 
+app_abtest/migrations
+app_user/migrations
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
