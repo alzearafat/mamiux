@@ -1018,3 +1018,27 @@ a.mu-button:focus {
 .mu-thanks-wrapper .mu-thanks-container .mu-thanks-image {
   padding: 100px 0;
 }
+
+.mu-404-wrapper {
+  text-align: center;
+}
+
+.mu-404-wrapper .mu-404-container {
+  padding: 10% 0;
+}
+
+.mu-404-wrapper .mu-404-container h1 {
+  font-family: Tiempo, Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  padding-bottom: 30px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.mu-404-wrapper .mu-404-container p {
+  font-size: 18px;
+}
+
+.mu-404-wrapper .mu-404-container .mu-404-image {
+  padding: 100px 0;
+}
