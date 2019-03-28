@@ -1042,3 +1042,7 @@ a.mu-button:focus {
 .mu-404-wrapper .mu-404-container .mu-404-image {
   padding: 100px 0;
 }
+
+.mu-404-wrapper .mu-404-container .mu-404-image img {
+  width: 300px;
+}
