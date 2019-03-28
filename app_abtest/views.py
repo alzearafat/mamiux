@@ -78,6 +78,7 @@ def ABTestListDashboardView(request):
         return render(request, template, context)
 
 
+@login_required
 def ABTestDetailDashboardView(request, pk):
 
     """
@@ -87,7 +88,7 @@ def ABTestDetailDashboardView(request, pk):
     :return:
     """
     
-    if not request.user.is_authenticated and not request.user.is_staff:
+    if not request.user.is_staff:
         raise Http404("Page does not exist")
     abtest = Design.objects.get(pk=pk)
     abtest_results = DesignComment.objects.filter(design_abtest_title=abtest.id)
