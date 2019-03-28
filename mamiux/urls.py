@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from app_abtest import views
 from django.conf.urls.static import static
+from django.views.static import serve
+
 
 handler404 = 'app_abtest.views.error_404_view'
 urlpatterns = [
@@ -34,6 +36,10 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('captcha/', include('captcha.urls')),
+    
+    # SERVER STATIC/MEDIA
+    path('media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    path('static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
 ]
 
