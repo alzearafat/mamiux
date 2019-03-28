@@ -36,10 +36,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('captcha/', include('captcha.urls')),
-    
-    # SERVER STATIC/MEDIA
-    path('media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    path('static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
 ]
 
