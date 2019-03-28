@@ -3,6 +3,7 @@
 
 app_abtest/migrations
 app_user/migrations
+mamiux/settings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
