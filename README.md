@@ -1,5 +1,7 @@
 # MamiUX
 
+We use this tool internally to conduct quantitative research using visual A / B testing methods. This tool is not made to replace other paid tools that are more complete and sophisticated, but to help us do A / B testing quickly and easily. Please feel free to use and improve it!
+
 ## 0. Screenshots
 ![Screenshot 1](https://i.postimg.cc/vTYdKkr5/Web-1366-1.png)
 ![Screenshot 2](https://i.postimg.cc/J4hL5w4L/Web-1366-2.png)
@@ -13,8 +15,8 @@
 
 #### In this project we need to install requirements for machine:
 -	Postgresql/Mysql 
--	Python > 3.6
--	Django >= 2.2
+-	Python > 3.7
+-	Django >= 3.0
 
 
 ### 2. Install requirements.txt 
