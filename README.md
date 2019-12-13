@@ -1,5 +1,14 @@
 # MamiUX
 
+## 0. Screenshots
+![Screenshot 1](https://i.postimg.cc/vTYdKkr5/Web-1366-1.png)
+![Screenshot 2](https://i.postimg.cc/J4hL5w4L/Web-1366-2.png)
+![Screenshot 3](https://i.postimg.cc/15YZWWfN/Web-1366-3.png)
+![Screenshot 4](https://i.postimg.cc/Hkq1mV0Y/Web-1366-4.png)
+![Screenshot 5](https://i.postimg.cc/2y0fNGGM/Web-1366-5.png)
+![Screenshot 6](https://i.postimg.cc/YCGBT1WD/Web-1366-6.png)
+
+
 ## 1. Setting Up Project
 
 #### In this project we need to install requirements for machine:
