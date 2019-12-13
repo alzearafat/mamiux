@@ -1,6 +1,8 @@
 # MamiUX - A Simple Visual A/B Testing Tool
 
-We use this tool internally to conduct quantitative research using visual A / B testing methods. This tool is not made to replace other paid tools that are more complete and sophisticated, but to help us do A / B testing quickly and easily. Please feel free to use and improve it!
+We use this tool internally to conduct quantitative research using visual A / B testing method. This tool is not made to replace other paid tools that are more complete and sophisticated, but to help us do A / B testing quickly and easily. Please feel free to use and improve it!
+
+- Keep scrolling for `How to Setup`
 
 ## 0. Screenshots
 ![Screenshot 1](https://i.postimg.cc/vTYdKkr5/Web-1366-1.png)
@@ -61,9 +63,12 @@ DATABASES = {
 `$./manage.py runserver`
 
 
+## 2. Future Plan (Or I hope so...)
+- Add User Personas feature
+- Add Project Brief feature
+
 
 ## API Docs
-
 
 Postman collection : [https://www.getpostman.com/collections/](https://www.getpostman.com/collections/d6097a098c8f4d2ef071)
 
