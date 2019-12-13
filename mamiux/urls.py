@@ -33,7 +33,7 @@ urlpatterns = [
     path('abtest/', include('app_abtest.urls', namespace='abtest')),
 
     #APP
-    path('summernote/', include('django_summernote.urls')),
+    #path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('captcha/', include('captcha.urls')),
 

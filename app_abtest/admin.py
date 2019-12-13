@@ -1,6 +1,6 @@
 from django.contrib import admin
 from app_abtest.models import Design, DesignComment
-from django_summernote.admin import SummernoteModelAdmin
+#from django_summernote.admin import SummernoteModelAdmin
 
 
 
@@ -24,7 +24,7 @@ class ABTestAdmin(admin.ModelAdmin):
     )
 
 
-class ABTestCommentAdmin(SummernoteModelAdmin):
+class ABTestCommentAdmin(admin.ModelAdmin):
 
     """
     A/B Test Comment in Admin
