@@ -2,7 +2,7 @@
 
 We use this tool internally to conduct quantitative research using visual A / B testing method. This tool is not made to replace other paid tools that are more complete and sophisticated, but to help us do A / B testing quickly and easily. Please feel free to use and improve it!
 
-- Keep scrolling for `How to Setup`
+~ Keep scrolling for `How to Setup`
 
 ## 0. Screenshots
 ![Screenshot 1](https://i.postimg.cc/vTYdKkr5/Web-1366-1.png)
