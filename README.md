@@ -1,4 +1,4 @@
-# MamiUX
+# MamiUX - A Simple Visual A/B Testing Tool
 
 We use this tool internally to conduct quantitative research using visual A / B testing methods. This tool is not made to replace other paid tools that are more complete and sophisticated, but to help us do A / B testing quickly and easily. Please feel free to use and improve it!
 
